@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@tests/*": ["./tests/*"]
+    },
+    "resolveJsonModule": true,
+    "target": "esnext",
+    "noUncheckedIndexedAccess": true
+  },
+  "extends": "../../tsconfig.json",
+  "include": [
+    "./src/types/env.d.ts",
+    "./src/**/*",
+    "./src/**/*.vue",
+    "./package.json",
+    "./tests/**/*"
+  ]
+}
