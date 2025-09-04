@@ -1,0 +1,37 @@
+<script setup lang="ts">
+import { usePlantStore } from '@/store/plants';
+
+const plantStore = usePlantStore();
+</script>
+
+<template>
+  <div class="list">
+    <article v-for="plant in plantStore.plants" :key="plant.id">
+      <span>{{ plant.icon }} </span>
+      <span>{{ plant.name }}</span>
+    </article>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+
+    img {
+      width: 100px;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+}
+</style>

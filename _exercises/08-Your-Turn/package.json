@@ -1,0 +1,46 @@
+{
+  "name": "unit-testing",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "engineStrict": true,
+  "engines": {
+    "node": "20 || 22"
+  },
+  "scripts": {
+    "start": "pnpm run dev",
+    "dev": "vite",
+    "build": "run-p type-check build-only",
+    "test:unit": "vitest",
+    "test:unit:ci": "run-p type-check:test \"test:unit --run --coverage\"",
+    "test:component": "playwright install && playwright test -c ./tests/component/playwright-ct.config.ts",
+    "test:integration": "playwright install && playwright test -c ./tests/integration/playwright.config.ts",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
+    "type-check:test": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
+    "lint": "eslint .",
+    "lint:fix": "pnpm run lint --fix",
+    "lint:ci": "pnpm run lint --format json --output-file coverage/eslint.report.json",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "storybook": "storybook dev -p 6006",
+    "prepare": "simple-git-hooks",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write -u",
+      "eslint --fix"
+    ]
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@import-meta-env/unplugin",
+      "esbuild",
+      "simple-git-hooks"
+    ]
+  }
+}

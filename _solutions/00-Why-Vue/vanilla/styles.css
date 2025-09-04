@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100dvh;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to top right, rgb(255, 255, 255), #49b883);
+  color: #333;
+  margin: 0;
+  height: 100%;
+}
+
+h1 {
+  margin-block-start: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+  margin-block-end: 20px;
+}
+
+.grocery-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.grocery-label {
+  white-space: nowrap;
+}
+
+.counter-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  --button-margin: 0.75rem;
+
+  > .decrement {
+    width: 24px;
+    margin-inline-end: var(--button-margin);
+  }
+
+  > .increment {
+    width: 24px;
+    margin-inline-start: var(--button-margin);
+  }
+}
+
+.total-sum {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+/* custome element root style */
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
+  margin: 0 auto;
+  background-color: rgb(248, 248, 248);
+  color: #555;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+grocery-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
