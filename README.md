@@ -34,10 +34,10 @@ cd vue-training-core
 
 ### ✅ 2. Create a .env from the `env.example`
 
-Copy and paste the `.env.example` as `.env` in the root folder.
+Copy and paste the `.env.example` as `.env.development` in the root folder.
 
 ```bash
-cp .env.example .env
+cp .env.example .env.development
 ```
 
 ### ✅ 3. Install dependencies (all at once)
