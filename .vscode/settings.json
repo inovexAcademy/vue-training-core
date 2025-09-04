@@ -21,5 +21,6 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "vitest.maximumConfigs": 50
+  "vitest.maximumConfigs": 50,
+  "workbench.colorTheme": "Default Light+"
 }
