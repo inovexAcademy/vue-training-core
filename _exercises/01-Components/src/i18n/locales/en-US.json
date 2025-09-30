@@ -1,0 +1,23 @@
+{
+  "menu": {
+    "languageFlyoutLabel": "Choose application language",
+    "login": "Log in",
+    "logout": "Log out",
+    "version": "App version"
+  },
+  "pages": {
+    "error": {
+      "error": "Error",
+      "notFound": "The page \"{path}\" could not be found.",
+      "unauthorized": "You are not allowed to access the page \"{path}\".",
+      "unknown": "An unknown error has occurred."
+    },
+    "home": {
+      "pageName": "Home"
+    },
+    "logout": {
+      "login": "Log in again",
+      "success": "Logout successful"
+    }
+  }
+}

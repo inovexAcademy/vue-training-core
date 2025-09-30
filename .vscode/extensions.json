@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "christian-kohler.path-intellisense",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "PKief.material-icon-theme",
+    "GitHub.github-vscode-theme",
+    "bierner.markdown-checkbox"
+  ]
+}

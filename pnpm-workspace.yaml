@@ -1,0 +1,5 @@
+packages:
+  - '_examples/**/*'
+  - '_exercises/**/*'
+  - '_solutions/**/*'
+  - 'shared' # optional: for shared utilities
