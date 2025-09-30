@@ -1,13 +1,7 @@
 <script setup lang="ts">
 import ShoppingCart from '@/components/ShoppingCart.vue';
 import { useShoppingCartStore } from '@/stores/shoppingCart';
-import {
-  OnyxButton,
-  OnyxCard,
-  OnyxHeadline,
-  OnyxLink,
-  OnyxPageLayout,
-} from 'sit-onyx';
+import { OnyxButton, OnyxCard, OnyxHeadline, OnyxPageLayout } from 'sit-onyx';
 
 const shoppingCartStore = useShoppingCartStore();
 </script>
@@ -25,7 +19,6 @@ const shoppingCartStore = useShoppingCartStore();
           <OnyxButton label="Complete Purchase" />
         </div>
       </div>
-      <OnyxLink href="/">Go back to shopping</OnyxLink>
     </OnyxCard>
   </OnyxPageLayout>
 </template>
