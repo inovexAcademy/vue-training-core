@@ -5,7 +5,7 @@
   "type": "module",
   "engineStrict": true,
   "engines": {
-    "node": "20 || 22"
+    "node": "23"
   },
   "scripts": {
     "start": "pnpm run dev",
@@ -27,22 +27,6 @@
     "storybook": "storybook dev -p 6006",
     "prepare": "simple-git-hooks",
     "preinstall": "npx only-allow pnpm"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": [
-      "prettier --write -u",
-      "eslint --fix"
-    ]
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@import-meta-env/unplugin",
-      "esbuild",
-      "simple-git-hooks"
-    ]
   },
   "dependencies": {
     "z-vue-scan": "^0.0.35"

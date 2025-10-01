@@ -5,6 +5,7 @@ import { createApp } from 'vue';
 
 import 'sit-onyx/global.css';
 import 'sit-onyx/style.css';
+import './styles/index.scss';
 
 /**
  * Setup up vue app. This function should not be called twice. Its exported only for testing.

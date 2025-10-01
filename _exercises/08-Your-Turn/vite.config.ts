@@ -1,9 +1,8 @@
 /// <reference types="vitest" />
 import ImportMetaPlugin from '@import-meta-env/unplugin';
 import vue from '@vitejs/plugin-vue';
-import { exec as pkg } from '@yao-pkg/pkg';
 import { URL, fileURLToPath } from 'node:url';
-import { defineConfig, type PluginOption } from 'vite';
+import { defineConfig } from 'vite';
 import { run } from 'vite-plugin-run';
 import { coverageConfigDefaults } from 'vitest/config';
 import vueDevTools from 'vite-plugin-vue-devtools';

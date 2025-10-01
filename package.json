@@ -5,7 +5,7 @@
   "type": "module",
   "engineStrict": true,
   "engines": {
-    "node": "20 || 22"
+    "node": "23"
   },
   "workspaces": [
     "_examples/*",
@@ -13,21 +13,8 @@
     "_solutions/*"
   ],
   "scripts": {
-    "start": "pnpm run dev -ws -if-present",
-    "dev": "vite -ws -if-present",
-    "build": "run-p type-check build-only -ws -if-present",
-    "test:unit": "vitest run",
     "test-all": "pnpm -r exec vitest run --passWithNoTests",
-    "build-only": "vite build -ws -if-present",
     "build-all": "pnpm -r exec vite build",
-    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false -ws -if-present",
-    "type-check:test": "vue-tsc --noEmit -p tsconfig.app.json --composite false -ws -if-present",
-    "lint": "eslint .",
-    "lint:fix": "pnpm run lint --fix",
-    "lint:ci": "pnpm run lint --format json --output-file coverage/eslint.report.json -ws -if-present",
-    "format": "prettier --write . -ws -if-present",
-    "format:check": "prettier --check . -ws -if-present",
-    "storybook": "storybook dev -p 6006 -ws -if-present",
     "prepare": "simple-git-hooks -ws -if-present",
     "preinstall": "npx only-allow pnpm"
   },
@@ -91,22 +78,6 @@
     "vitest-sonar-reporter": "^2.0.1",
     "vue-tsc": "^2.2.10",
     "z-vue-scan": "^0.0.35"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": [
-      "prettier --write -u",
-      "eslint --fix"
-    ]
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@import-meta-env/unplugin",
-      "esbuild",
-      "simple-git-hooks"
-    ]
   },
   "packageManager": "pnpm@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a"
 }
