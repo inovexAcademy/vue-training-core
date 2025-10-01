@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { OnyxIconButton, OnyxCard, OnyxHeadline } from 'sit-onyx';
-import trash from '@sit-onyx/icons/trash.svg?raw';
 import { useShoppingCartStore } from '@/stores/shoppingCart';
+import { iconTrash } from '@sit-onyx/icons';
+import { OnyxCard, OnyxHeadline, OnyxIconButton } from 'sit-onyx';
 
 const shoppingCartStore = useShoppingCartStore();
 
@@ -29,7 +29,7 @@ function handleRemove(productId: number) {
             <p>Quantity: {{ cartItem.quantity }}</p>
             <OnyxIconButton
               label="Remove"
-              :icon="trash"
+              :icon="iconTrash"
               @click="handleRemove(cartItem.product.id)"
             ></OnyxIconButton>
           </div>
