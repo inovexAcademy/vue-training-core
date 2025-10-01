@@ -1,18 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import AboutView from '../views/AboutView.vue';
 import HomeView from '../views/HomeView.vue';
+import MovieView from '../views/MovieView.vue';
 
 export const routes = [
   {
     path: '/',
     component: HomeView,
-    name: 'home'
+    name: 'Homepage',
   },
   {
     path: '/about',
     component: AboutView,
-    name: 'about'
+    name: 'About',
   },
+  /* {
+    path: '/movie/:movieId',
+    component: MovieView,
+    name: 'Movie',
+  }, */
 ];
 
 export const router = createRouter({
