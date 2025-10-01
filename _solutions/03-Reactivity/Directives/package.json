@@ -24,7 +24,6 @@
     "lint:ci": "pnpm run lint --format json --output-file coverage/eslint.report.json",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "storybook": "storybook dev -p 6006",
     "prepare": "simple-git-hooks",
     "preinstall": "npx only-allow pnpm"
   },
