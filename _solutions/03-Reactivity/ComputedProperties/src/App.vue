@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { useColorMode } from '@vueuse/core';
-import { OnyxAppLayout, OnyxToast, useThemeTransition } from 'sit-onyx';
+import { OnyxAppLayout, useThemeTransition } from 'sit-onyx';
 import HomeView from './views/HomeView.vue';
 
 const { store: colorScheme } = useColorMode({ disableTransition: false });
@@ -10,6 +10,5 @@ useThemeTransition(colorScheme);
 <template>
   <OnyxAppLayout class="onyx-grid-max-md onyx-grid-center">
     <HomeView />
-    <OnyxToast />
   </OnyxAppLayout>
 </template>
