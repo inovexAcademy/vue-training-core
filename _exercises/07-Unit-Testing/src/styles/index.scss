@@ -1,0 +1,13 @@
+//
+// in this file, you can put global styles that will be available for the whole application
+//
+@use '@fontsource-variable/source-code-pro';
+@use '@fontsource-variable/source-sans-3';
+
+/**
+* global centering function
+*/
+.align-center {
+  display: grid;
+  place-items: center;
+}
