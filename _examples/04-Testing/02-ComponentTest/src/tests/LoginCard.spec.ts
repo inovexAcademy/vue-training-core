@@ -38,7 +38,7 @@ describe('LoginCard', () => {
       });
     });
 
-     describe('when user clicks on cancel button', () => {
+    describe('when user clicks on cancel button', () => {
       // Then
       it('emits "cancel" with true', async () => {
         // Arrange
