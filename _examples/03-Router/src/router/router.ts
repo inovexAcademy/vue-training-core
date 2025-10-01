@@ -3,7 +3,7 @@ import AboutView from '../views/AboutView.vue';
 import HomeView from '../views/HomeView.vue';
 import MovieView from '../views/MovieView.vue';
 
-export const routes = [
+export const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: HomeView,

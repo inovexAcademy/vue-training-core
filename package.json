@@ -16,7 +16,16 @@
     "test-all": "pnpm -r exec vitest run --passWithNoTests",
     "build-all": "pnpm -r exec vite build",
     "prepare": "simple-git-hooks -ws -if-present",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "start:1": "cd _exercises/01-Components && pnpm run dev",
+    "start:2": "cd _exercises/02-Input-Output && pnpm run dev",
+    "start:3a": "cd _exercises/03-Reactivity/ComputedProperties && pnpm run dev",
+    "start:3b": "cd _exercises/03-Reactivity/VueDirectives && pnpm run dev",
+    "start:04": "cd _exercises/04-Pinia && pnpm run dev",
+    "start:05": "cd _exercises/05-Router && pnpm run dev",
+    "start:06": "cd _exercises/06-Dynamic-Routes && pnpm run dev",
+    "start:07": "cd _exercises/07-Unit-Testing && pnpm run dev",
+    "start:08": "cd _exercises/08-Your-Turn && pnpm run dev"
   },
   "dependencies": {
     "@fontsource-variable/source-code-pro": "^5.2.5",

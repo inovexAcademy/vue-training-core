@@ -10,18 +10,11 @@ const emit = defineEmits<{
   'add-to-cart': [product: Product];
 }>();
 
-const handleAddToCart = (event: Event, id: number) => {
-  console.debug('🔥 handle', event, id);
-  event.preventDefault();
-  event.stopPropagation();
-  event.stopImmediatePropagation();
-  return 'test';
+const handleAddToCart = (id: number) => {
+  const productToAdd = products.find(product => product.id === id);
+  if (!productToAdd) return;
 
-  // const productToAdd = products.find(product => product.id === productId);
-
-  // if (!productToAdd) return;
-
-  // emit('add-to-cart', productToAdd);
+  emit('add-to-cart', productToAdd);
 };
 </script>
 

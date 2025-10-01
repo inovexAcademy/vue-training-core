@@ -6,7 +6,7 @@ The goal of this exercise is to use what you have learned in this course.
 
 Implement the following features:
 
-### Product List:
+### Product List
 
 Extend the product lists page to support the following.
 
@@ -14,7 +14,7 @@ Extend the product lists page to support the following.
 - [ ] Add a `OnyxButtonGroup` which lets the user sort the product list by price
 - [ ] Add a `OnyxInput` which lets you filter products by name
 
-### Shopping Cart:
+### Shopping Cart
 
 Adjust the shopping cart sidebar to work like the following.
 
@@ -22,7 +22,7 @@ Adjust the shopping cart sidebar to work like the following.
 - [ ] The quantity is converted to a `OnyxStepper` which allows to adjust the amount right from the shopping cart component
 - [ ] A click on the trash icon does not reduce the amount, but removes the whole product from the shopping cart now
 
-### Checkout:
+### Checkout
 
 On the checkout page the following can be seen
 
@@ -33,7 +33,7 @@ On the checkout page the following can be seen
 - [ ] When clicking the 'Complete Purchase' button, an `OnyxToast` pops up that says: 'Congratulations: Your order is confirmed!'
 - [ ] After that click, all products are removed from the shopping cart
 
-### User Account page:
+### User Account page
 
 Create a new page for users to keep their account data and settings.
 
@@ -50,7 +50,11 @@ Create a new page for users to keep their account data and settings.
     - [ ] A button to submit a product is shown, which adds the defined product to the inventory
     - [ ] Invalid prices (negative or not even numbers) are recognized and the user is presented a hint to please enter only valid price values.
 
-### 💪 Bonus challenges:
+### Data Fetching
+
+- [ ] Use `fetchProducts` instead of `getProducts`
+
+### 💪 Bonus challenges
 
 - [ ] Add tests for everything you implemented
 - [ ] Add 1.000 products to the list and implement an infinite scroll mechanism
