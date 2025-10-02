@@ -21,11 +21,11 @@
     "start:2": "cd _exercises/02-Input-Output && pnpm run dev",
     "start:3a": "cd _exercises/03-Reactivity/ComputedProperties && pnpm run dev",
     "start:3b": "cd _exercises/03-Reactivity/VueDirectives && pnpm run dev",
-    "start:04": "cd _exercises/04-Pinia && pnpm run dev",
-    "start:05": "cd _exercises/05-Router && pnpm run dev",
-    "start:06": "cd _exercises/06-Dynamic-Routes && pnpm run dev",
-    "start:07": "cd _exercises/07-Unit-Testing && pnpm run dev",
-    "start:08": "cd _exercises/08-Your-Turn && pnpm run dev"
+    "start:4": "cd _exercises/04-Pinia && pnpm run dev",
+    "start:5": "cd _exercises/05-Router && pnpm run dev",
+    "start:6": "cd _exercises/06-Dynamic-Routes && pnpm run dev",
+    "start:7": "cd _exercises/07-Unit-Testing && pnpm run dev",
+    "start:8": "cd _exercises/08-Your-Turn && pnpm run dev"
   },
   "dependencies": {
     "@fontsource-variable/source-code-pro": "^5.2.5",
