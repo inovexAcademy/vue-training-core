@@ -5,7 +5,7 @@ import CheckoutView from '@/views/CheckoutView.vue';
 import ProductView from '@/views/ProductView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
 
-export const routes = [
+export const routes: RouteRecordRaw[] = [
   { path: '/', component: HomeView, name: 'Home' },
   { path: '/checkout', component: CheckoutView, name: 'Checkout' },
   { path: '/product/:productId', component: ProductView, name: 'Product' },

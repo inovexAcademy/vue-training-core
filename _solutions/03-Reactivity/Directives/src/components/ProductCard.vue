@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import plus from '@sit-onyx/icons/plus.svg?raw';
-import { OnyxButton, OnyxCard, OnyxHeadline } from 'sit-onyx';
+import { OnyxCard, OnyxHeadline } from 'sit-onyx';
 import { computed } from 'vue';
 
 const props = defineProps<{
@@ -12,7 +11,7 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  'add-to-cart': [event: Event, id: number];
+  'add-to-cart': [id: number];
 }>();
 
 const discountedPrice = computed<number | undefined>(() => {
@@ -23,8 +22,8 @@ const discountedPrice = computed<number | undefined>(() => {
   );
 });
 
-const addToCart = (event: Event) => {
-  emit('add-to-cart', event, props.id);
+const addToCart = () => {
+  emit('add-to-cart', props.id);
 };
 </script>
 
@@ -40,7 +39,7 @@ const addToCart = (event: Event) => {
     </p>
     <button
       label="Add to cart"
-      :icon="plus"
+      :icon="iconPlus"
       @click.stop.prevent.capture="addToCart"
     >
       Add

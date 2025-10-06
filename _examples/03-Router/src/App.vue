@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { OnyxLink } from 'sit-onyx';
 import { RouterView, RouterLink } from 'vue-router';
 </script>
 
 <template>
   <nav>
-    <OnyxLink href="/">Home</OnyxLink>
-    <OnyxLink href="/about">About</OnyxLink>
-    <RouterLink :to="{ name: 'home' }">Home (RouterLink)</RouterLink>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/about">About</RouterLink>
   </nav>
   <main>
     <RouterView />

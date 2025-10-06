@@ -6,7 +6,7 @@ import { OnyxLink, OnyxPageLayout, OnyxSidebar } from 'sit-onyx';
 
 <template>
   <OnyxPageLayout>
-    <template #sidebar>
+    <template #sidebarRight>
       <OnyxSidebar label="Example sidebar" alignment="right">
         <ShoppingCart></ShoppingCart>
         <div class="sidebar-cta">
