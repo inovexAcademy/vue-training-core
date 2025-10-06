@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import plus from '@sit-onyx/icons/plus.svg?raw';
 import { OnyxCard, OnyxHeadline } from 'sit-onyx';
 import { computed } from 'vue';
 
@@ -38,7 +37,11 @@ const addToCart = () => {
     <p v-if="discountedPrice" class="discounted-price">
       Discounted Price: {{ discountedPrice }} $
     </p>
-    <button label="Add to cart" :icon="plus" @click.stop="addToCart">
+    <button
+      label="Add to cart"
+      :icon="iconPlus"
+      @click.stop.prevent.capture="addToCart"
+    >
       Add
     </button>
   </OnyxCard>

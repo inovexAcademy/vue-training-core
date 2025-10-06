@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ShoppingCartItem } from '@/types/common';
-import { OnyxIconButton, OnyxCard, OnyxHeadline } from 'sit-onyx';
-import trash from '@sit-onyx/icons/trash.svg?raw';
+import { iconTrash } from '@sit-onyx/icons';
+import { OnyxCard, OnyxHeadline, OnyxIconButton } from 'sit-onyx';
 import { computed } from 'vue';
 
 const cartItems = defineModel<ShoppingCartItem[]>();
@@ -45,7 +45,7 @@ const totalPrice = computed(() =>
             <p>Quantity: {{ cartItem.quantity }}</p>
             <OnyxIconButton
               label="Remove"
-              :icon="trash"
+              :icon="iconTrash"
               @click="() => removeProductFromCart(cartItem.product.id)"
             ></OnyxIconButton>
           </div>

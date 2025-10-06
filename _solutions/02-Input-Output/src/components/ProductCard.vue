@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import plus from '@sit-onyx/icons/plus.svg?raw';
+import { iconPlus } from '@sit-onyx/icons';
 import { OnyxButton, OnyxCard, OnyxHeadline } from 'sit-onyx';
 
 const props = defineProps<{
@@ -21,7 +21,7 @@ const emit = defineEmits<{
     <p class="price">Price: {{ props.price }} $</p>
     <OnyxButton
       label="Add to cart"
-      :icon="plus"
+      :icon="iconPlus"
       @click.stop="emit('add-to-cart', props.id)"
     ></OnyxButton>
   </OnyxCard>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { OnyxIconButton, OnyxCard, OnyxHeadline } from 'sit-onyx';
-import trash from '@sit-onyx/icons/trash.svg?raw';
+import { iconTrash } from '@sit-onyx/icons';
+import { OnyxCard, OnyxHeadline, OnyxIconButton } from 'sit-onyx';
 
 // const cartItems: ShoppingCartItem[];
 //       ^-- Should be received from HomeView
@@ -17,7 +17,7 @@ import trash from '@sit-onyx/icons/trash.svg?raw';
 
           <div class="card-content">
             <p>Quantity: -</p>
-            <OnyxIconButton label="Remove" :icon="trash"></OnyxIconButton>
+            <OnyxIconButton label="Remove" :icon="iconTrash"></OnyxIconButton>
             <!-- ^-- Should remove cart items on click -->
           </div>
         </OnyxCard>
