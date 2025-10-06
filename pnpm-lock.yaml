@@ -234,13 +234,13 @@ importers:
     dependencies:
       z-vue-scan:
         specifier: ^0.0.35
-        version: 0.0.35(vue@3.5.22(typescript@5.8.3))
+        version: 0.0.35(vue@3.5.20(typescript@5.8.3))
 
   _solutions/03-Reactivity/Directives:
     dependencies:
       z-vue-scan:
         specifier: ^0.0.35
-        version: 0.0.35(vue@3.5.22(typescript@5.8.3))
+        version: 0.0.35(vue@3.5.20(typescript@5.8.3))
 
   _solutions/04-Pinia: {}
 
@@ -7005,7 +7005,7 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 4.0.3
     optionalDependencies:
-      rollup: 4.52.3
+      rollup: 4.45.1
 
   "@rollup/rollup-android-arm-eabi@4.45.1":
     optional: true
@@ -7735,11 +7735,6 @@ snapshots:
   chalk@5.4.1: {}
 
   check-error@2.1.1: {}
-
-  chokidar@4.0.3:
-    dependencies:
-      readdirp: 4.1.2
-    optional: true
 
   chownr@1.1.4: {}
 
@@ -8924,9 +8919,6 @@ snapshots:
     dependencies:
       semver: 7.7.2
 
-  node-addon-api@7.1.1:
-    optional: true
-
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
@@ -9339,7 +9331,55 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass-embedded-all-unknown@1.93.2:
+  sass-embedded-android-arm64@1.89.2:
+    optional: true
+
+  sass-embedded-android-arm@1.89.2:
+    optional: true
+
+  sass-embedded-android-riscv64@1.89.2:
+    optional: true
+
+  sass-embedded-android-x64@1.89.2:
+    optional: true
+
+  sass-embedded-darwin-arm64@1.89.2:
+    optional: true
+
+  sass-embedded-darwin-x64@1.89.2:
+    optional: true
+
+  sass-embedded-linux-arm64@1.89.2:
+    optional: true
+
+  sass-embedded-linux-arm@1.89.2:
+    optional: true
+
+  sass-embedded-linux-musl-arm64@1.89.2:
+    optional: true
+
+  sass-embedded-linux-musl-arm@1.89.2:
+    optional: true
+
+  sass-embedded-linux-musl-riscv64@1.89.2:
+    optional: true
+
+  sass-embedded-linux-musl-x64@1.89.2:
+    optional: true
+
+  sass-embedded-linux-riscv64@1.89.2:
+    optional: true
+
+  sass-embedded-linux-x64@1.89.2:
+    optional: true
+
+  sass-embedded-win32-arm64@1.89.2:
+    optional: true
+
+  sass-embedded-win32-x64@1.89.2:
+    optional: true
+
+  sass-embedded@1.89.2:
     dependencies:
       sass: 1.93.2
     optional: true
@@ -10437,7 +10477,7 @@ snapshots:
       vue: 3.5.20(typescript@5.8.3)
       vue-demi: 0.14.10(vue@3.5.20(typescript@5.8.3))
 
-  z-vue-scan@0.0.35(vue@3.5.22(typescript@5.8.3)):
+  z-vue-scan@0.0.35(vue@3.5.20(typescript@5.8.3)):
     dependencies:
-      vue: 3.5.22(typescript@5.8.3)
-      vue-demi: 0.14.10(vue@3.5.22(typescript@5.8.3))
+      vue: 3.5.20(typescript@5.8.3)
+      vue-demi: 0.14.10(vue@3.5.20(typescript@5.8.3))
