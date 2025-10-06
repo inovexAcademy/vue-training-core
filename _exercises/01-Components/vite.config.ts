@@ -43,7 +43,7 @@ export default defineConfig(({ mode }) => ({
         startup: true,
       },
     ]),
-    vueDevTools()
+    vueDevTools(),
   ],
   resolve: {
     alias: {

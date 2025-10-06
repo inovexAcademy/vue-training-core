@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => ({
         startup: true,
       },
     ]),
-    vueDevTools()
+    vueDevTools(),
   ],
   resolve: {
     alias: {
@@ -65,5 +65,3 @@ export default defineConfig(({ mode }) => ({
     setupFiles: ['./tests/vitest-setup.ts'],
   },
 }));
-
-

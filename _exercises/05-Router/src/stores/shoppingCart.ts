@@ -5,15 +5,15 @@ import { computed, ref } from 'vue';
 export const useShoppingCartStore = defineStore('shoppingCart', () => {
   const cartItems = ref<ShoppingCartItem[]>([]);
   const totalPrice = computed(() =>
-  cartItems.value
-    .reduce((sum, item) => {
-      const discountedPrice = item.product.discountPercentage
-        ? item.product.price * (1 - item.product.discountPercentage / 100)
-        : item.product.price;
-      return sum + discountedPrice * item.quantity;
-    }, 0)
-    .toFixed(2),
-);
+    cartItems.value
+      .reduce((sum, item) => {
+        const discountedPrice = item.product.discountPercentage
+          ? item.product.price * (1 - item.product.discountPercentage / 100)
+          : item.product.price;
+        return sum + discountedPrice * item.quantity;
+      }, 0)
+      .toFixed(2),
+  );
 
   function addToCart(newCartItem: Product) {
     const isInCart = cartItems.value.some(
