@@ -4,7 +4,7 @@ The goal of this exercise is to create your own components and display them on t
 
 ## 📝 Tasks
 
-- [ ] Create a new Vue component called `ProductCard` in [\./src/components/](./src/components/).
+- [ ] Implement the newly created Vue component called `ProductCard` in [\./src/components/](./src/components/).
 - [ ] Fill it with content by adding static arbitrary title, description, price, and "Add to cart"-button
   > - [ ] 💪 Bonus challenge: Use `OnyxHeadline`, `OnyxCard`, and `OnyxButton` where possible!
 - [ ] Fill in the content for another component `ProductList` which we created. Add a title "Available Products" and render two `ProductCard` components
