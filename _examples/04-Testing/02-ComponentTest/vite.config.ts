@@ -13,6 +13,7 @@ export default defineConfig({
     },
   },
   test: {
+    exclude: ['**/*.ct.spec.ts'],
     environment: 'jsdom',
   },
 });

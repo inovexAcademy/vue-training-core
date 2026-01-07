@@ -9,7 +9,7 @@ The goal of this exercise is to write basic unit tests using vitest and vue test
   > 💡 Don't be afraid to draw inspiration from the unit tests of `ProductCard` and `ShoppingCart` 🙂
 
 - 💪 Bonus challenges:
-  - [ ] It seems the discounted price function could be used in many different components. We want to make it future proof. Extract the calculation within the `discountedPrice` of the `ProductCard.vue` component into a calculation helper file. Then create meaningful isolated unit tests for it. <br />
+  - [ ] It seems like the discounted price function could be used in many different components. We want to make it future proof. Extract the calculation within the `discountedPrice` of the `ProductCard.vue` component into a calculation helper file. Then, create meaningful isolated unit tests for it. <br />
         Still want a task? Use a table test to raise readability.
   - [ ] Add unit tests for the shopping cart store (find help [here](https://pinia.vuejs.org/cookbook/testing.html))
 

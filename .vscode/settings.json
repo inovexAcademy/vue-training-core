@@ -22,10 +22,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "vitest.maximumConfigs": 50,
-  "workbench.colorTheme": "Default Light+",
-  "chat.agent.enabled": false,
-  "chat.commandCenter.enabled": false,
-  "chat.notifyWindowOnConfirmation": false,
+  "workbench.colorTheme": "Dracula Theme",
+  "chat.agent.enabled": true,
+  "chat.commandCenter.enabled": true,
+  "chat.notifyWindowOnConfirmation": true,
   "telemetry.feedback.enabled": false,
   "githubPullRequests.codingAgent.enabled": true
 }
