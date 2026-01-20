@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { OnyxCard, OnyxHeadline } from 'sit-onyx';
+import { iconPlus } from '@sit-onyx/icons';
+import { OnyxButton, OnyxCard, OnyxHeadline } from 'sit-onyx';
 import { computed } from 'vue';
 
 const props = defineProps<{
@@ -21,10 +22,6 @@ const discountedPrice = computed<number | undefined>(() => {
     (props.price * (1 - props.discountPercentage / 100)).toFixed(2),
   );
 });
-
-const addToCart = () => {
-  emit('add-to-cart', props.id);
-};
 </script>
 
 <template>
@@ -37,13 +34,11 @@ const addToCart = () => {
     <p v-if="discountedPrice" class="discounted-price">
       Discounted Price: {{ discountedPrice }} $
     </p>
-    <button
+    <OnyxButton
       label="Add to cart"
       :icon="iconPlus"
-      @click.stop.prevent.capture="addToCart"
-    >
-      Add
-    </button>
+      @click.stop="emit('add-to-cart', props.id)"
+    ></OnyxButton>
   </OnyxCard>
 </template>
 

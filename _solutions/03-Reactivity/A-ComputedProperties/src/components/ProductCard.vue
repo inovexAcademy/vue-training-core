@@ -31,8 +31,8 @@ const discountedPrice = computed<number | undefined>(() => {
     <p class="price" :class="{ 'has-discount': discountedPrice }">
       Price: {{ props.price }} $
     </p>
-    <p v-if="discountedPrice" class="discounted-price">
-      Discounted Price: {{ discountedPrice }} $
+    <p class="discounted-price">
+      Discounted Price: {{ discountedPrice ?? '' }} $
     </p>
     <OnyxButton
       label="Add to cart"

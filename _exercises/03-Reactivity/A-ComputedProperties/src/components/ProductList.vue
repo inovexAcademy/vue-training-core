@@ -14,7 +14,6 @@ const handleAddToCart = (productId: number) => {
   <div>
     <OnyxHeadline is="h1" class="title">Available Products</OnyxHeadline>
     <ul>
-      <!-- The list should be dynamic -->
       <li>
         <ProductCard
           :id="products[0].id"
@@ -34,7 +33,6 @@ const handleAddToCart = (productId: number) => {
         ></ProductCard>
       </li>
     </ul>
-    <!-- "No products available..." -->
   </div>
 </template>
 

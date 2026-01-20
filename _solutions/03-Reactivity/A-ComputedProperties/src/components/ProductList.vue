@@ -22,18 +22,28 @@ const handleAddToCart = (productId: number) => {
 <template>
   <div>
     <OnyxHeadline is="h1" class="title">Available Products</OnyxHeadline>
-    <ul v-if="products.length > 0" data-test-id="product-list">
-      <li v-for="product in products" :key="product.id">
+    <ul>
+      <li>
         <ProductCard
-          :id="product.id"
-          :title="product.title"
-          :description="product.description"
-          :price="product.price"
-          :discount-percentage="product.discountPercentage"
+          :id="products[0].id"
+          :title="products[0].title"
+          :description="products[0].description"
+          :price="products[0].price"
+          :discount-percentage="products[0].discountPercentage"
+          @add-to-cart="handleAddToCart"
+        ></ProductCard>
+      </li>
+      <li>
+        <ProductCard
+          :id="products[1].id"
+          :title="products[1].title"
+          :description="products[1].description"
+          :price="products[1].price"
+          :discount-percentage="products[1].discountPercentage"
+          @add-to-cart="handleAddToCart"
         ></ProductCard>
       </li>
     </ul>
-    <p v-else>No products available...</p>
   </div>
 </template>
 
@@ -47,9 +57,9 @@ ul {
   flex-direction: column;
   gap: 8px;
   padding: 0;
-}
 
-li {
-  list-style: none;
+  li {
+    list-style: none;
+  }
 }
 </style>

@@ -7,22 +7,14 @@ The goals of this exercise are
 
 ## 📝 Tasks
 
-- [ ] `HomeView`:
-  - [ ] Add an `OnyxSidebar` to the `HomeView` and make it display our `ShoppingCart` component
-  - [ ] Store the shopping cart state (= a list of `ShoppingCartItem`s) in `HomeView`. The component should pass this state to every other component that requires it.
-  - In the end, the `ProductList` should be able to add items to the cart while the `ShoppingCart` should be able to remove items from the cart.
-
 - [ ] `ShoppingCart`:
-  - [ ] Display all shopping cart items
-  - [ ] Enable `ShoppingCart` to delete items from the shopping cart
+  - [ ] Display all shopping cart items dynamically via directives
+  - [ ] Enable the `ShoppingCart` component to delete items from the shopping cart
     > - [ ] 💪 Bonus challenge: Use `v-model`
-  - [ ] Display the total price of all items
-    > - [ ] 💪 Bonus challenge: Use a computed property
 
 - [ ] `ProductList`:
-  - [ ] Display all products in the product list with their name, description and price
+  - [ ] Display all products in the product list with their name, description and price dynamically via directives
   - [ ] Show "No products available..." instead of the `ProductList` if no products are available
-  - [ ] Enable `ProductList` to add items to the shopping cart
 
 ## 🖼️ Example Result
 

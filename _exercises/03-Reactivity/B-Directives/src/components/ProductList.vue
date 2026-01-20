@@ -1,12 +1,21 @@
 <script lang="ts" setup>
 import ProductCard from '@/components/ProductCard.vue';
 import { getProducts } from '@/shared/products';
+import { Product } from '@/types/common';
 import { OnyxHeadline } from 'sit-onyx';
 
 const products = getProducts();
 
+const emit = defineEmits<{
+  'add-to-cart': [product: Product];
+}>();
+
 const handleAddToCart = (productId: number) => {
-  window.alert(`Added product with Id ${productId} to cart`);
+  const productToAdd = products.find(product => product.id === productId);
+
+  if (!productToAdd) return;
+
+  emit('add-to-cart', productToAdd);
 };
 </script>
 

@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 import ProductList from '@/components/ProductList.vue';
+import ShoppingCart from '@/components/ShoppingCart.vue';
 import { Product, ShoppingCartItem } from '@/types/common';
-import { OnyxPageLayout } from 'sit-onyx';
+import { OnyxPageLayout, OnyxSidebar } from 'sit-onyx';
 import { ref } from 'vue';
 
 const cartItems = ref<ShoppingCartItem[]>([]);
@@ -26,6 +27,12 @@ function handleAddToCart(newCartItem: Product) {
 
 <template>
   <OnyxPageLayout>
-    <ProductList></ProductList>
+    <template #sidebarRight>
+      <OnyxSidebar label="Example sidebar" alignment="right">
+        <ShoppingCart :cart-items="cartItems"></ShoppingCart>
+      </OnyxSidebar>
+    </template>
+
+    <ProductList @add-to-cart="handleAddToCart"></ProductList>
   </OnyxPageLayout>
 </template>
