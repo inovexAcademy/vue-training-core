@@ -1,12 +1,10 @@
-# Exercise 03 Reactivity - Computed Properties
+# Exercise 03 (A) Reactivity - Computed Properties
 
 The goals of this exercise is to use Vue computed properties to calculate derived values.
 
 ## 📝 Tasks
 
 - [ ] `ProductList`:
-  - [ ] Display all products in the product list with their name, description and price
-  - [ ] Show "No products available..." instead of the `ProductList` if no products are available
   - [ ] Render the discounted price beside the price
 
 ## 🖼️ Example Result

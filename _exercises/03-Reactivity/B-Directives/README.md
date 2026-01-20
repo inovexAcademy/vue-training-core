@@ -1,4 +1,4 @@
-# Exercise 03 Reactivity - Directives
+# Exercise 03 (B) Reactivity - Directives
 
 The goals of this exercise are
 
@@ -20,6 +20,8 @@ The goals of this exercise are
     > - [ ] 💪 Bonus challenge: Use a computed property
 
 - [ ] `ProductList`:
+  - [ ] Display all products in the product list with their name, description and price
+  - [ ] Show "No products available..." instead of the `ProductList` if no products are available
   - [ ] Enable `ProductList` to add items to the shopping cart
 
 ## 🖼️ Example Result

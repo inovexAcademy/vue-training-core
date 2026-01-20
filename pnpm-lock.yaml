@@ -197,9 +197,9 @@ importers:
 
   _exercises/02-Input-Output: {}
 
-  _exercises/03-Reactivity/ComputedProperties: {}
+  _exercises/03-Reactivity/A-ComputedProperties: {}
 
-  _exercises/03-Reactivity/VueDirectives: {}
+  _exercises/03-Reactivity/B-Directives: {}
 
   _exercises/04-Pinia: {}
 
@@ -231,13 +231,13 @@ importers:
 
   _solutions/02-Input-Output: {}
 
-  _solutions/03-Reactivity/ComputedProperties:
+  _solutions/03-Reactivity/A-ComputedProperties:
     dependencies:
       z-vue-scan:
         specifier: ^0.0.35
         version: 0.0.35(vue@3.5.22(typescript@5.8.3))
 
-  _solutions/03-Reactivity/Directives:
+  _solutions/03-Reactivity/B-Directives:
     dependencies:
       z-vue-scan:
         specifier: ^0.0.35
