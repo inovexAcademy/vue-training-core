@@ -14,7 +14,7 @@
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:unit:ci": "run-p type-check:test \"test:unit --run --coverage\"",
-    "test:component": "playwright install && playwright test -c ./tests/component/playwright-ct.config.ts",
+    "test:component": "playwright test -c playwright-ct.config.ts",
     "test:integration": "playwright install && playwright test -c ./tests/integration/playwright.config.ts",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
