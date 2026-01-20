@@ -15,8 +15,8 @@ importers:
         specifier: ^5.2.7
         version: 5.2.9
       '@sit-onyx/icons':
-        specifier: 1.0.0-beta.23
-        version: 1.0.0-beta.23
+        specifier: 1.4.0
+        version: 1.4.0
       '@vueuse/core':
         specifier: ^13.7.0
         version: 13.9.0(vue@3.5.22(typescript@5.8.3))
@@ -28,7 +28,7 @@ importers:
         version: 3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
       sit-onyx:
         specifier: 1.6.0
-        version: 1.6.0(@sit-onyx/icons@1.0.0-beta.23)(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
+        version: 1.6.0(@sit-onyx/icons@1.4.0)(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
       vue:
         specifier: ^3.5.20
         version: 3.5.22(typescript@5.8.3)
@@ -1032,8 +1032,8 @@ packages:
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
 
-  '@sit-onyx/icons@1.0.0-beta.23':
-    resolution: {integrity: sha512-KtvupjHU4IsIxYfoPCC8P1gxyugTRzXQXphcP3qN668srxVEs1I+fWDAfUT3V6gjNRI4wLW+xDpQh5hekryikA==}
+  '@sit-onyx/icons@1.4.0':
+    resolution: {integrity: sha512-ePeR/8a1M0O933Iez/s4cebNTJftKYl0NOjNrlqhxFSpU8+th4vF6gh1oKctc4TwCH7TQpP7hArrKzGcxzDfqw==}
     engines: {node: '>=20'}
 
   '@tsconfig/node22@22.0.2':
@@ -4452,7 +4452,7 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
-  '@sit-onyx/icons@1.0.0-beta.23': {}
+  '@sit-onyx/icons@1.4.0': {}
 
   '@tsconfig/node22@22.0.2': {}
 
@@ -6763,9 +6763,9 @@ snapshots:
       mrmime: 2.0.1
       totalist: 3.0.1
 
-  sit-onyx@1.6.0(@sit-onyx/icons@1.0.0-beta.23)(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)):
+  sit-onyx@1.6.0(@sit-onyx/icons@1.4.0)(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)):
     dependencies:
-      '@sit-onyx/icons': 1.0.0-beta.23
+      '@sit-onyx/icons': 1.4.0
       typescript: 5.8.3
       vue: 3.5.22(typescript@5.8.3)
 
