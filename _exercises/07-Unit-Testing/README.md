@@ -8,9 +8,9 @@ The goal of this exercise is to write basic unit tests using vitest and componen
 
 ### 💪 Bonus challenges:
 
-- [ ] Come up with meaningful unit test cases for the `ProductList` component and implement them
+- [ ] Come up with meaningful unit test cases for the `ProductCard` component and implement them
 
-  > 💡 Don't be afraid to draw inspiration from the component tests of `ProductCard` 🙂
+  > 💡 Don't be afraid to draw inspiration from the component tests of `ShoppingCart` 🙂
 
 ## 💡 Help
 
