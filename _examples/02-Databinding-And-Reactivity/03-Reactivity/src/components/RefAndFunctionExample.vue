@@ -10,8 +10,8 @@ const greeting2 = () => {
 const greeting3 = (name: string) => {
   return `Hello ${name}`;
 };
-const tStatic = name.value;
-const tPlain = name;
+const nameCopyStatic = name.value;
+const nameCopyRef = name;
 
 // change name value after time
 setTimeout(() => {
@@ -33,8 +33,8 @@ setTimeout(() => {
   3. {{ greeting3(name) }}
   <br />
   <!-- ❌ does not get updated on name change because t is a static value assigned once -->
-  4. {{ greeting3(tStatic) }}
+  4. {{ greeting3(nameCopyStatic) }}
   <br />
   <!-- ✅ does get updated as it is points to the ref -->
-  5. {{ greeting3(tPlain) }}
+  5. {{ greeting3(nameCopyRef) }}
 </template>

@@ -1,14 +1,15 @@
 <script lang="ts" setup>
 import ProductList from '@/components/ProductList.vue';
 import { OnyxPageLayout } from 'sit-onyx';
+// import { type ShoppingCartItem, type Product } from '@/types/common';
 
-// const cartItems: ShoppingCartItem[];
-//       ^-- ProductList and ShoppingCart should be able to change the state
+// define cartItems of type ShoppingCartItem[] here
+//          ^-- ProductList and ShoppingCart should be able to change this state then
 </script>
 
 <template>
   <OnyxPageLayout>
-    <!-- Add sidebar here -->
+    <!-- Add sidebar with ShoppingCart component here -->
     <ProductList></ProductList>
   </OnyxPageLayout>
 </template>
