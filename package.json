@@ -26,6 +26,7 @@
     "start:6": "cd _exercises/06-Dynamic-Routes && pnpm run dev",
     "start:7": "cd _exercises/07-Unit-Testing && pnpm run dev",
     "start:8": "cd _exercises/08-Your-Turn && pnpm run dev",
+    "start:all-in": "cd _exercises/99-All-In-One-Go && pnpm run dev",
     "lint": "eslint .",
     "lint:fix": "pnpm run lint --fix",
     "format": "prettier --write .",

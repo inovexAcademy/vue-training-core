@@ -64,6 +64,7 @@ Either
   ```
 
 > You can work on exercises one-by-one. They’re isolated and ready-to-run.
+> You can also try to build everything yourself, all within one folder instead of switching by using the
 
 ---
 
@@ -99,6 +100,13 @@ If you fall behind or want to peek at the next step:
 2. Copy the contents into your `_exercises/XX-*` folder
 
 ---
+
+## Further Resources
+
+- [Vue 3 Documentation](https://vuejs.org/guide/introduction.html) (Composition API)
+- [Sit Onyx Design System](https://onyx.schwarz) (used in this workshop)
+- [Vitest Documentation](https://vitest.dev/) (unit testing framework)
+- [Vue CheatSheet](https://learnvue.co/LearnVue-Vue-3-Cheatsheet.pdf) (handy reference)
 
 ## 🤝 Code Together, Learn Together
 

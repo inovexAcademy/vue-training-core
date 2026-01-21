@@ -1,13 +1,15 @@
 <script setup lang="ts">
 const props = defineProps<{
-  title: string;
   number: string;
+  title?: string;
 }>();
 </script>
 
 <template>
   <div class="exercise-banner">
-    <pre>Exercise {{ props.number }}: {{ props.title }}</pre>
+    <pre>
+Exercise {{ props.number }} {{ props.title ? ':' : '' }} {{ props.title }}</pre
+    >
   </div>
 </template>
 
