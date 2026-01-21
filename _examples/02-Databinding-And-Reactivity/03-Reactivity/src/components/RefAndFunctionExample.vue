@@ -10,6 +10,8 @@ const greeting2 = () => {
 const greeting3 = (name: string) => {
   return `Hello ${name}`;
 };
+const tStatic = name.value;
+const tPlain = name;
 
 // change name value after time
 setTimeout(() => {
@@ -29,4 +31,10 @@ setTimeout(() => {
   <br />
   <!-- ✅ gets updated on name change because the parameter is recognized within the function body at compile time -->
   3. {{ greeting3(name) }}
+  <br />
+  <!-- ❌ does not get updated on name change because t is a static value assigned once -->
+  4. {{ greeting3(tStatic) }}
+  <br />
+  <!-- ✅ does get updated as it is points to the ref -->
+  5. {{ greeting3(tPlain) }}
 </template>

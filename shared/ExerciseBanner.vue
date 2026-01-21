@@ -7,20 +7,21 @@ const props = defineProps<{
 
 <template>
   <div class="exercise-banner">
-    <p>Exercise {{ props.number }}: {{ props.title }}</p>
+    <pre>Exercise {{ props.number }}: {{ props.title }}</pre>
   </div>
 </template>
 
 <style scoped>
 .exercise-banner {
-  background-color: #007acc;
   color: white;
-  padding: 1rem;
-  border: 2px solid #005f99;
+  padding: 0.4rem 0.75rem;
+  border: 4px dashed #e65ad9;
   text-align: left;
-  font-weight: bold;
   position: fixed;
-  width: 100vw;
-  top: 0;
+  width: auto;
+  border-radius: 12px;
+  left: 8px;
+  top: 8px;
+  opacity: 0.7;
 }
 </style>

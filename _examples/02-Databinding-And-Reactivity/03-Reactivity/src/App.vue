@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import FunctionExample from './components/FunctionExample.vue';
+import RefAndFunctionExample from './components/RefAndFunctionExample.vue';
 import RefAndReactiveStructure from './components/RefAndReactiveStructure.vue';
 
 const name = ref('Hello World');
@@ -15,7 +15,7 @@ setTimeout(() => {
   {{ name }}
   <br />
 
-  <FunctionExample />
+  <RefAndFunctionExample />
   <br />
   <br />
   <RefAndReactiveStructure />

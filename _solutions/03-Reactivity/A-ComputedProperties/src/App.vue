@@ -11,7 +11,7 @@ useThemeTransition(colorScheme);
 <template>
   <OnyxAppLayout class="onyx-grid-max-md onyx-grid-center">
     <ExerciseBanner
-      :number="3"
+      number="3"
       title="Reactivity - Computed Properties (Solution)"
     />
     <HomeView />
