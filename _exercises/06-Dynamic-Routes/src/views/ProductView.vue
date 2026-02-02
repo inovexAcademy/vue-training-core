@@ -4,13 +4,12 @@ import { OnyxPageLayout, OnyxHeadline, OnyxCard, OnyxLink } from 'sit-onyx';
 import { computed } from 'vue';
 
 const getProductForId = (id: number) => {
+  if (id === -1) return undefined;
   const products = getProducts();
   return products.find(p => p.id === id);
 };
 
-let productId; // Get the proper product ID from the route params;
-
-const product = getProductForId(productId);
+const product = getProductForId(-1); // Get the proper product ID from the route params;
 
 const discountedPrice = computed<number | undefined>(() => {
   if (!product?.discountPercentage || product.discountPercentage <= 0)
@@ -23,7 +22,7 @@ const discountedPrice = computed<number | undefined>(() => {
 
 <template>
   <OnyxPageLayout>
-    <OnyxCard>
+    <OnyxCard v-if="product !== undefined">
       <OnyxLink href="/">Go back to products</OnyxLink>
       <OnyxHeadline is="h1" class="title">
         <!-- Display the product ID, taken from the route params, here -->
@@ -38,6 +37,12 @@ const discountedPrice = computed<number | undefined>(() => {
       <p v-if="discountedPrice" class="discounted-price">
         Discounted Price: {{ discountedPrice }} $
       </p>
+    </OnyxCard>
+    <!-- Fallback -->
+    <OnyxCard v-else>
+      <OnyxHeadline is="h1" class="title">
+        Todo: Not yet implemented
+      </OnyxHeadline>
     </OnyxCard>
   </OnyxPageLayout>
 </template>
