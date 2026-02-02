@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { computed, readonly, ref } from 'vue';
+import { computed, ref } from 'vue';
 
 export interface Plant {
   id: number;
@@ -29,7 +29,7 @@ export const usePlantStore = defineStore('plants', () => {
   };
 
   return {
-    plants: readonly(plants),
+    plants,
     selectedType,
     filteredPlants,
     allPlantTypes,
@@ -37,6 +37,7 @@ export const usePlantStore = defineStore('plants', () => {
   };
 });
 
+// mock data source (could be an API call)
 const getPlants = () => {
   return [
     { id: 1, name: 'Coconut Palm', type: 'Palm', icon: '🌴' },

@@ -6,7 +6,7 @@ const plantStore = usePlantStore();
 
 <template>
   <div class="list">
-    <article v-for="plant in plantStore.plants" :key="plant.id">
+    <article v-for="plant in plantStore.filteredPlants" :key="plant.id">
       <span>{{ plant.icon }} </span>
       <span>{{ plant.name }}</span>
     </article>
