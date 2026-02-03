@@ -1,5 +1,5 @@
-import { test, expect } from '@playwright/experimental-ct-vue';
 import LoginCard from '@/components/LoginCard.vue';
+import { expect, test } from '@playwright/experimental-ct-vue';
 
 const loginMsg = '[data-testid=login-message]';
 const loginBtn = '[data-testid=login-button]';
@@ -18,7 +18,7 @@ test.describe('LoginCard', () => {
       // Assert
       await expect(component.locator(loginMsg)).toHaveText('Login to continue');
       await expect(component.locator(loginBtn)).toBeVisible();
-      await expect(component.locator(welcomeMsg)).toHaveCount(0);
+      await expect(component.locator(welcomeMsg)).not.toBeVisible();
     });
     // When
     test.describe('when user clicks on login button', () => {
@@ -63,7 +63,8 @@ test.describe('LoginCard', () => {
         await component.locator('.cancel-btn').click();
 
         // Assert
-        expect(messages).toContain('CANCEL_EVENT');
+        expect(messages).toHaveLength(1);
+        expect(messages[0]!).toEqual('CANCEL_EVENT');
       });
     });
   });
@@ -76,7 +77,6 @@ test.describe('LoginCard', () => {
         props: { isLoggedIn: false },
       });
 
-      // Act
       await component.update({
         props: { isLoggedIn: true, name: 'Dieter Schwarz' },
       });

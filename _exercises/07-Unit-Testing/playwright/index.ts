@@ -7,8 +7,6 @@ import 'sit-onyx/style.css';
 import type { useShoppingCartStore } from '../src/stores/shoppingCart';
 
 export type HooksConfig = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  route?: any;
   store?: StoreState<ReturnType<typeof useShoppingCartStore>>;
 };
 
