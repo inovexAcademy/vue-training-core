@@ -15,8 +15,8 @@ importers:
         specifier: ^5.2.7
         version: 5.2.9
       '@sit-onyx/icons':
-        specifier: 1.0.0-beta.23
-        version: 1.0.0-beta.23
+        specifier: 1.4.0
+        version: 1.4.0
       '@vueuse/core':
         specifier: ^13.7.0
         version: 13.9.0(vue@3.5.22(typescript@5.8.3))
@@ -27,8 +27,8 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
       sit-onyx:
-        specifier: 1.0.0-beta.285
-        version: 1.0.0-beta.285(@sit-onyx/icons@1.0.0-beta.23)(@sit-onyx/shared@1.0.0-beta.4(@types/node@22.18.8)(sass@1.93.2)(vue@3.5.22(typescript@5.8.3))(yaml@2.8.1))(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
+        specifier: 1.6.0
+        version: 1.6.0(@sit-onyx/icons@1.4.0)(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3))
       vue:
         specifier: ^3.5.20
         version: 3.5.22(typescript@5.8.3)
@@ -201,9 +201,9 @@ importers:
 
   _exercises/02-Input-Output: {}
 
-  _exercises/03-Reactivity/ComputedProperties: {}
+  _exercises/03-Reactivity/A-ComputedProperties: {}
 
-  _exercises/03-Reactivity/VueDirectives: {}
+  _exercises/03-Reactivity/B-Directives: {}
 
   _exercises/04-Pinia: {}
 
@@ -215,7 +215,7 @@ importers:
 
   _exercises/08-Your-Turn: {}
 
-  _exercises/99-Why-Vue/vue:
+  _exercises/90-Why-Vue/vue:
     dependencies:
       vue:
         specifier: ^3.5.13
@@ -223,25 +223,27 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.2.3
-        version: 5.2.4(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
+        version: 5.2.4(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
       vite:
         specifier: ^6.2.4
-        version: 6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
+        version: 6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
       vite-plugin-vue-devtools:
         specifier: ^7.7.2
-        version: 7.7.7(rollup@4.52.4)(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
+        version: 7.7.7(rollup@4.52.4)(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
+
+  _exercises/99-All-In-One-Go: {}
 
   _solutions/01-Components: {}
 
   _solutions/02-Input-Output: {}
 
-  _solutions/03-Reactivity/ComputedProperties:
+  _solutions/03-Reactivity/A-ComputedProperties:
     dependencies:
       z-vue-scan:
         specifier: ^0.0.35
         version: 0.0.35(vue@3.5.22(typescript@5.8.3))
 
-  _solutions/03-Reactivity/Directives:
+  _solutions/03-Reactivity/B-Directives:
     dependencies:
       z-vue-scan:
         specifier: ^0.0.35
@@ -255,7 +257,7 @@ importers:
 
   _solutions/07-Unit-Testing: {}
 
-  _solutions/99-Why-Vue/vue:
+  _solutions/90-Why-Vue/vue:
     dependencies:
       vue:
         specifier: ^3.5.13
@@ -263,13 +265,13 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.2.3
-        version: 5.2.4(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
+        version: 5.2.4(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
       vite:
         specifier: ^6.2.4
-        version: 6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
+        version: 6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
       vite-plugin-vue-devtools:
         specifier: ^7.7.2
-        version: 7.7.7(rollup@4.52.4)(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
+        version: 7.7.7(rollup@4.52.4)(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
 
 packages:
 
@@ -893,18 +895,9 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@playwright/experimental-ct-core@1.51.1':
-    resolution: {integrity: sha512-kpRZWBT3SMukL1fx8BwEj385Pkgtp86bBKzmrmJU30lWlQiIDFNaIHosgxQC68c8y2mg3Una/lBSHNc2Fotgkw==}
-    engines: {node: '>=18'}
-
   '@playwright/experimental-ct-core@1.52.0':
     resolution: {integrity: sha512-DiDEammXxt8OIFDfoNitoOZyHFJAu6aYi0abmHl0IZgOQHxccP6UX50aTEnSTTUWCfwUWB0Vd8TKJ6w122WJEw==}
     engines: {node: '>=18'}
-
-  '@playwright/experimental-ct-vue@1.51.1':
-    resolution: {integrity: sha512-/VvLxreuqaRbf8I5MMHjgLIdq9cnD7gv7B8aUe9lyWTj3sib+emx3vWgW2GJSgC8wmwKABi8Zx8dbbAd+mOFlQ==}
-    engines: {node: '>=18'}
-    hasBin: true
 
   '@playwright/experimental-ct-vue@1.52.0':
     resolution: {integrity: sha512-MaUVEZZ+eo/UH/qWLwUzDl2SgjYyGQUVrGFVayUX07TASS4FDMRV8f8Jjkk0t7iYeFfWE2ZyZS1muLeWeP7qXg==}
@@ -1045,14 +1038,9 @@ packages:
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
 
-  '@sit-onyx/icons@1.0.0-beta.23':
-    resolution: {integrity: sha512-KtvupjHU4IsIxYfoPCC8P1gxyugTRzXQXphcP3qN668srxVEs1I+fWDAfUT3V6gjNRI4wLW+xDpQh5hekryikA==}
+  '@sit-onyx/icons@1.4.0':
+    resolution: {integrity: sha512-ePeR/8a1M0O933Iez/s4cebNTJftKYl0NOjNrlqhxFSpU8+th4vF6gh1oKctc4TwCH7TQpP7hArrKzGcxzDfqw==}
     engines: {node: '>=20'}
-
-  '@sit-onyx/shared@1.0.0-beta.4':
-    resolution: {integrity: sha512-9ojsVARidmTlMporWOS5mCy6q7mxcfua1OyzFWBhdk8T2F0jnhnN+32Vsh5mlwHB1/95+khvqYvZSCEvkNQnuQ==}
-    engines: {node: '>=20'}
-    deprecated: 'This package is deprecated as it is no longer needed since sit-onyx version 1.0.0-beta.334. Please update your onyx version accordingly. For further information, please visit: https://onyx.schwarz/development/packages/changelogs/sit-onyx.html#_1-0-0-beta-334'
 
   '@tsconfig/node22@22.0.2':
     resolution: {integrity: sha512-Kmwj4u8sDRDrMYRoN9FDEcXD8UpBSaPQQ24Gz+Gamqfm7xxn+GBR7ge/Z7pK8OXNGyUzbSwJj+TH6B+DS/epyA==}
@@ -2740,18 +2728,8 @@ packages:
   pkg-types@1.3.1:
     resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
 
-  playwright-core@1.51.1:
-    resolution: {integrity: sha512-/crRMj8+j/Nq5s8QcvegseuyeZPxpQCZb6HNk3Sos3BlZyAknRjoyJPFWkpNn8v0+P3WiwqFF8P+zQo4eqiNuw==}
-    engines: {node: '>=18'}
-    hasBin: true
-
   playwright-core@1.52.0:
     resolution: {integrity: sha512-l2osTgLXSMeuLZOML9qYODUQoPPnUsKsb5/P6LJ2e6uPKXUdPK5WYhN4z03G+YNbWmGDY4YENauNu4ZKczreHg==}
-    engines: {node: '>=18'}
-    hasBin: true
-
-  playwright@1.51.1:
-    resolution: {integrity: sha512-kkx+MB2KQRkyxjYPc3a0wLZZoDczmppyGJIvQ43l+aZihkaVvmu/21kiyaHeHjiFxjxNNFnUncKmcGIyOojsaw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -3125,12 +3103,11 @@ packages:
     resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
     engines: {node: '>=18'}
 
-  sit-onyx@1.0.0-beta.285:
-    resolution: {integrity: sha512-SMyjyfdLJK22+MhqJuOnH3EUx43IsmTeqoWgeOuFfu/vc7ss7zEaJt6KbNvInsGQu/WlppOEpGQRrtU874hEAg==}
+  sit-onyx@1.6.0:
+    resolution: {integrity: sha512-x4Li/aVvuxmG+gPXRtO9V1l29Lty4niLejJaKX8Xc4J6eMLCUfc2WFNeWwEJyy1Q5jo0Xv3+Y8cnD0HwslTa4A==}
     engines: {node: '>=20'}
     peerDependencies:
-      '@sit-onyx/icons': ^1.0.0-beta.22
-      '@sit-onyx/shared': ^1.0.0-beta.4
+      '@sit-onyx/icons': ^1.4.0
       typescript: '>= 5.2.2'
       vue: '>= 3.5.0'
 
@@ -4400,25 +4377,6 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@playwright/experimental-ct-core@1.51.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)':
-    dependencies:
-      playwright: 1.51.1
-      playwright-core: 1.51.1
-      vite: 6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
-    transitivePeerDependencies:
-      - '@types/node'
-      - jiti
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - yaml
-    optional: true
-
   '@playwright/experimental-ct-core@1.52.0(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)':
     dependencies:
       playwright: 1.52.0
@@ -4436,26 +4394,6 @@ snapshots:
       - terser
       - tsx
       - yaml
-
-  '@playwright/experimental-ct-vue@1.51.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))(yaml@2.8.1)':
-    dependencies:
-      '@playwright/experimental-ct-core': 1.51.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
-      '@vitejs/plugin-vue': 5.2.4(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
-    transitivePeerDependencies:
-      - '@types/node'
-      - jiti
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - vite
-      - vue
-      - yaml
-    optional: true
 
   '@playwright/experimental-ct-vue@1.52.0(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))(yaml@2.8.1)':
     dependencies:
@@ -4560,26 +4498,7 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
-  '@sit-onyx/icons@1.0.0-beta.23': {}
-
-  '@sit-onyx/shared@1.0.0-beta.4(@types/node@22.18.8)(sass@1.93.2)(vue@3.5.22(typescript@5.8.3))(yaml@2.8.1)':
-    optionalDependencies:
-      '@playwright/experimental-ct-vue': 1.51.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))(yaml@2.8.1)
-      '@vitejs/plugin-vue': 5.2.4(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
-      sass-embedded: 1.93.2
-      vite: 6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
-    transitivePeerDependencies:
-      - '@types/node'
-      - jiti
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - vue
-      - yaml
+  '@sit-onyx/icons@1.4.0': {}
 
   '@tsconfig/node22@22.0.2': {}
 
@@ -4709,7 +4628,6 @@ snapshots:
     dependencies:
       vite: 6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
       vue: 3.5.22(typescript@5.8.3)
-    optional: true
 
   '@vitest/coverage-v8@3.2.4(vitest@3.2.4(@types/node@22.18.8)(jsdom@26.1.0)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))':
     dependencies:
@@ -4854,14 +4772,14 @@ snapshots:
     dependencies:
       '@vue/devtools-kit': 7.7.7
 
-  '@vue/devtools-core@7.7.7(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))':
+  '@vue/devtools-core@7.7.7(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))':
     dependencies:
       '@vue/devtools-kit': 7.7.7
       '@vue/devtools-shared': 7.7.7
       mitt: 3.0.1
       nanoid: 5.1.6
       pathe: 2.0.3
-      vite-hot-client: 2.1.0(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))
+      vite-hot-client: 2.1.0(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))
       vue: 3.5.22(typescript@5.8.3)
     transitivePeerDependencies:
       - vite
@@ -6489,17 +6407,7 @@ snapshots:
       mlly: 1.8.0
       pathe: 2.0.3
 
-  playwright-core@1.51.1:
-    optional: true
-
   playwright-core@1.52.0: {}
-
-  playwright@1.51.1:
-    dependencies:
-      playwright-core: 1.51.1
-    optionalDependencies:
-      fsevents: 2.3.2
-    optional: true
 
   playwright@1.52.0:
     dependencies:
@@ -6906,10 +6814,9 @@ snapshots:
       mrmime: 2.0.1
       totalist: 3.0.1
 
-  sit-onyx@1.0.0-beta.285(@sit-onyx/icons@1.0.0-beta.23)(@sit-onyx/shared@1.0.0-beta.4(@types/node@22.18.8)(sass@1.93.2)(vue@3.5.22(typescript@5.8.3))(yaml@2.8.1))(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)):
+  sit-onyx@1.6.0(@sit-onyx/icons@1.4.0)(typescript@5.8.3)(vue@3.5.22(typescript@5.8.3)):
     dependencies:
-      '@sit-onyx/icons': 1.0.0-beta.23
-      '@sit-onyx/shared': 1.0.0-beta.4(@types/node@22.18.8)(sass@1.93.2)(vue@3.5.22(typescript@5.8.3))(yaml@2.8.1)
+      '@sit-onyx/icons': 1.4.0
       typescript: 5.8.3
       vue: 3.5.22(typescript@5.8.3)
 
@@ -7260,13 +7167,17 @@ snapshots:
     dependencies:
       vite: 6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
 
+  vite-hot-client@2.1.0(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)):
+    dependencies:
+      vite: 6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
+
   vite-node@3.2.4(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1):
     dependencies:
       cac: 6.7.14
       debug: 4.4.3
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -7281,7 +7192,7 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-inspect@0.8.9(rollup@4.52.4)(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)):
+  vite-plugin-inspect@0.8.9(rollup@4.52.4)(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)):
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.3.0(rollup@4.52.4)
@@ -7292,7 +7203,7 @@ snapshots:
       perfect-debounce: 1.0.0
       picocolors: 1.1.1
       sirv: 3.0.2
-      vite: 6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -7322,16 +7233,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-vue-devtools@7.7.7(rollup@4.52.4)(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3)):
+  vite-plugin-vue-devtools@7.7.7(rollup@4.52.4)(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3)):
     dependencies:
-      '@vue/devtools-core': 7.7.7(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
+      '@vue/devtools-core': 7.7.7(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))(vue@3.5.22(typescript@5.8.3))
       '@vue/devtools-kit': 7.7.7
       '@vue/devtools-shared': 7.7.7
       execa: 9.6.0
       sirv: 3.0.2
-      vite: 6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
-      vite-plugin-inspect: 0.8.9(rollup@4.52.4)(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))
-      vite-plugin-vue-inspector: 5.3.2(vite@6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))
+      vite: 6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
+      vite-plugin-inspect: 0.8.9(rollup@4.52.4)(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))
+      vite-plugin-vue-inspector: 5.3.2(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1))
     transitivePeerDependencies:
       - '@nuxt/kit'
       - rollup
@@ -7365,6 +7276,21 @@ snapshots:
       kolorist: 1.8.0
       magic-string: 0.30.19
       vite: 6.3.6(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
+    transitivePeerDependencies:
+      - supports-color
+
+  vite-plugin-vue-inspector@5.3.2(vite@6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)):
+    dependencies:
+      '@babel/core': 7.28.4
+      '@babel/plugin-proposal-decorators': 7.28.0(@babel/core@7.28.4)
+      '@babel/plugin-syntax-import-attributes': 7.27.1(@babel/core@7.28.4)
+      '@babel/plugin-syntax-import-meta': 7.10.4(@babel/core@7.28.4)
+      '@babel/plugin-transform-typescript': 7.28.0(@babel/core@7.28.4)
+      '@vue/babel-plugin-jsx': 1.5.0(@babel/core@7.28.4)
+      '@vue/compiler-dom': 3.5.22
+      kolorist: 1.8.0
+      magic-string: 0.30.19
+      vite: 6.4.1(@types/node@22.18.8)(sass-embedded@1.93.2)(sass@1.93.2)(yaml@2.8.1)
     transitivePeerDependencies:
       - supports-color
 

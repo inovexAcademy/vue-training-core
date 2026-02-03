@@ -5,14 +5,14 @@ The goal of this exercise is to pass data from component to component, display i
 ## 📝 Tasks
 
 - [ ] `ProductCard`:
-  - [ ] Enable `ProductCard` to receive product `id`, `title`, `description`, and `price` from its parent
+  - [ ] Enable `ProductCard` to receive product `id`, `title`, `description`, and `price` from its parent (explicitly do not use the Product interface, but your manually defined fields for now.)
   - [ ] Display `id`, `title`, `description`, and `price` in the template
   - [ ] Emit an event with the product ID when the user clicks on the "Add to cart"-button
 
 - [ ] `ProductList`:
   - [ ] Use the `getProducts` method from `@/shared/products` to get a list of products
     > ⚠️ Use `getProducts` **only** inside of the `ProductList` component!
-  - [ ] Show the information of the **first two** products in the `ProductList` (one `ProductCard` each)
+  - [ ] Show the information of the **first two** products in the `ProductList` statically (one `ProductCard` component for each entry)
   - [ ] Handle the event from `ProductCard` and log the ID to the console, e.g. using `console.log(...)`
 
 ## 🖼️ Example Result

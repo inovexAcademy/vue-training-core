@@ -1,0 +1,20 @@
+import App from '@/App.vue';
+import { createPinia } from 'pinia';
+import { createOnyx } from 'sit-onyx';
+import { createApp } from 'vue';
+
+import 'sit-onyx/global.css';
+import 'sit-onyx/style.css';
+import './styles/index.scss';
+
+/**
+ * Setup up vue app. This function should not be called twice. Its exported only for testing.
+ */
+export async function setupApp() {
+  const onyx = createOnyx({});
+  const app = createApp(App).use(createPinia()).use(onyx);
+
+  app.mount('#app');
+  return app;
+}
+setupApp();
