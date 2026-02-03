@@ -6,8 +6,8 @@ import { dirname, resolve } from 'node:path';
 import { URL, fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import { run } from 'vite-plugin-run';
-import { coverageConfigDefaults } from 'vitest/config';
 import vueDevTools from 'vite-plugin-vue-devtools';
+import { coverageConfigDefaults } from 'vitest/config';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
