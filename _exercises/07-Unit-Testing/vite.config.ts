@@ -50,6 +50,7 @@ export default defineConfig(({ mode }) => ({
   test: {
     environment: 'jsdom',
     reporters: ['default', 'junit', 'vitest-sonar-reporter'],
+    exclude: ['**/tests/components/**'],
     outputFile: {
       junit: 'test-results/results-unit.xml',
       'vitest-sonar-reporter': 'test-results/sonar-report.xml',

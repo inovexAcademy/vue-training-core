@@ -3,9 +3,9 @@ import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
 
 export const useShoppingCartStore = defineStore('shoppingCart', () => {
-  const _cartItems = ref<ShoppingCartItem[]>([]);
+  const cartItems = ref<ShoppingCartItem[]>([]);
   const totalPrice = computed(() =>
-    _cartItems.value
+    cartItems.value
       .reduce((sum, item) => {
         const discountedPrice = item.product.discountPercentage
           ? item.product.price * (1 - item.product.discountPercentage / 100)
@@ -16,12 +16,12 @@ export const useShoppingCartStore = defineStore('shoppingCart', () => {
   );
 
   function addToCart(newCartItem: Product) {
-    const isInCart = _cartItems.value.some(
+    const isInCart = cartItems.value.some(
       item => item.product.id === newCartItem.id,
     );
 
     if (isInCart) {
-      _cartItems.value = _cartItems.value.map(item => {
+      cartItems.value = cartItems.value.map(item => {
         if (item.product.id !== newCartItem.id) return item;
 
         return { ...item, quantity: item.quantity + 1 };
@@ -29,14 +29,14 @@ export const useShoppingCartStore = defineStore('shoppingCart', () => {
       return;
     }
 
-    _cartItems.value = [
-      ..._cartItems.value,
+    cartItems.value = [
+      ...cartItems.value,
       { product: newCartItem, quantity: 1 },
     ];
   }
 
   function removeFromCart(productId: number) {
-    _cartItems.value = _cartItems.value
+    cartItems.value = cartItems.value
       .map(item => {
         if (item.product.id === productId) {
           return {
@@ -51,8 +51,7 @@ export const useShoppingCartStore = defineStore('shoppingCart', () => {
   }
 
   return {
-    _cartItems,
-    cartItems: computed(() => _cartItems.value),
+    cartItems,
     totalPrice,
     addToCart,
     removeFromCart,

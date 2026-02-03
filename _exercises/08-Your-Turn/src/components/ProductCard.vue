@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { calcDiscountedPrice } from '@/utils/calc-helper';
 import { iconPlus } from '@sit-onyx/icons';
 import { OnyxButton, OnyxCard, OnyxHeadline } from 'sit-onyx';
 import { computed } from 'vue';
@@ -18,9 +19,7 @@ const emit = defineEmits<{
 const discountedPrice = computed<number | undefined>(() => {
   if (!props.discountPercentage || props.discountPercentage <= 0)
     return undefined;
-  return parseFloat(
-    (props.price * (1 - props.discountPercentage / 100)).toFixed(2),
-  );
+  return calcDiscountedPrice(props.price, props.discountPercentage);
 });
 </script>
 

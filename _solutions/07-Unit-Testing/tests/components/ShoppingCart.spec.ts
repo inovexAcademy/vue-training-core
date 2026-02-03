@@ -7,23 +7,74 @@ test.describe('ShoppingCart', () => {
   test('should render', async ({ mount }) => {
     const component = await mount(ShoppingCart);
 
-    await expect(component).toContainText('Shopping Cart');
+    await expect(component).toBeVisible();
   });
 
-  test('should render with items in cart', async ({ mount }) => {
-    const component = await mount<HooksConfig>(ShoppingCart, {
-      hooksConfig: {
-        store: {
-          _cartItems: [
-            {
-              product: mockProducts[0],
-              quantity: 1,
-            },
-          ],
+  // Given
+  test.describe('given the shopping cart is empty', () => {
+    // Then
+    test('then it should not display any products', async ({ mount }) => {
+      const component = await mount<HooksConfig>(ShoppingCart, {
+        hooksConfig: {
+          store: {
+            cartItems: [],
+          },
         },
-      },
-    });
+      });
 
-    await expect(component).toContainText('Product 1');
+      await expect(
+        component.getByTestId('product-list-item'),
+      ).not.toBeVisible();
+    });
+    test('then the total price should be 0', async ({ mount }) => {
+      const component = await mount<HooksConfig>(ShoppingCart, {
+        hooksConfig: {
+          store: {
+            cartItems: [],
+          },
+        },
+      });
+
+      await expect(component).toContainText('Total price: 0.00 $');
+    });
+  });
+
+  // Given
+  test.describe('given the shopping cart has products', () => {
+    // Then
+    test('then it should display the products', async ({ mount }) => {
+      const component = await mount<HooksConfig>(ShoppingCart, {
+        hooksConfig: {
+          store: {
+            cartItems: [
+              { product: mockProducts[0], quantity: 2 },
+              { product: mockProducts[1], quantity: 1 },
+            ],
+          },
+        },
+      });
+
+      await expect(component).toContainText(mockProducts[0].title);
+      await expect(component).toContainText(mockProducts[1].title);
+    });
+    test('then the total price should be correct', async ({ mount }) => {
+      const component = await mount<HooksConfig>(ShoppingCart, {
+        hooksConfig: {
+          store: {
+            cartItems: [
+              { product: mockProducts[0], quantity: 2 },
+              { product: mockProducts[1], quantity: 1 },
+            ],
+          },
+        },
+      });
+
+      /* Calculated as:
+      Product 0: 29.99 - 10% = 26.991 * 2 = 53.982
+      Product 1: 49.99 - 15% = 42.4915 * 1 = 42.4915
+      Total: 53.982 + 42.4915 = 96.4735 -> 96.47
+      */
+      await expect(component).toContainText('Total price: 96.47 $');
+    });
   });
 });

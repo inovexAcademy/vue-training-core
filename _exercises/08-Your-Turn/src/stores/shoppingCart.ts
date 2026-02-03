@@ -51,7 +51,7 @@ export const useShoppingCartStore = defineStore('shoppingCart', () => {
   }
 
   return {
-    cartItems: computed(() => cartItems.value),
+    cartItems,
     totalPrice,
     addToCart,
     removeFromCart,
