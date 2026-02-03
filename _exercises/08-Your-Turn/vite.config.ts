@@ -48,6 +48,7 @@ export default defineConfig(({ mode }) => ({
     open: true,
   },
   test: {
+    globals: true,
     environment: 'jsdom',
     reporters: ['default', 'junit', 'vitest-sonar-reporter'],
     exclude: ['**/tests/components/**'],
