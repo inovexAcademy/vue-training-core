@@ -1,7 +1,7 @@
-import { expect, test } from '@playwright/experimental-ct-vue';
 import ShoppingCart from '@/components/ShoppingCart.vue';
-import type { HooksConfig } from '../../playwright/index';
+import { expect, test } from '@playwright/experimental-ct-vue';
 import { mockProducts } from '@tests/mocks/products';
+import type { HooksConfig } from '../../playwright/index';
 
 test.describe('ShoppingCart', () => {
   test('should render', async ({ mount }) => {

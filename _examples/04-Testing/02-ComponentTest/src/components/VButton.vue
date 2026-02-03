@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue';
 const props = withDefaults(
   defineProps<{
     type?: 'primary' | 'secondary';
