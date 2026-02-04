@@ -50,5 +50,10 @@ export const useShoppingCartStore = defineStore('shoppingCart', () => {
       .filter(item => item.quantity > 0);
   }
 
-  return { cartItems, totalPrice, addToCart, removeFromCart };
+  return {
+    cartItems,
+    totalPrice,
+    addToCart,
+    removeFromCart,
+  };
 });

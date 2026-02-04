@@ -51,8 +51,7 @@ export const useShoppingCartStore = defineStore('shoppingCart', () => {
   }
 
   return {
-    cartItems: computed(() => cartItems.value),
-    //         ^-- This ensures the immutability of cartItems.
+    cartItems,
     totalPrice,
     addToCart,
     removeFromCart,

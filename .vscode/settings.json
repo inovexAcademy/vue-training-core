@@ -5,6 +5,23 @@
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[vue]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
   "editor.inlayHints.enabled": "on",
   "editor.inlayHints.maximumLength": 42,
   "html.format.wrapLineLength": 120,
@@ -21,10 +38,6 @@
   "vue.inlayHints.missingProps": true,
   "vue.inlayHints.vBindShorthand": true,
   "vue.inlayHints.destructuredProps": true,
-  "[vue]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "vitest.maximumConfigs": 50,
   "workbench.colorTheme": "Default Light+",
   "chat.agent.enabled": false,

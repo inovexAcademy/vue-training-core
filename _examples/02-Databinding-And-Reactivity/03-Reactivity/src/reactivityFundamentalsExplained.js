@@ -11,8 +11,8 @@ const myName = {
   },
   dep: [
     // dependencies would be tracked here
-  ]
-}
+  ],
+};
 
 // 2. execute render function (compiled from vue template)
 // here vue will call the sayHi function and detect that a reactive value (name) is used

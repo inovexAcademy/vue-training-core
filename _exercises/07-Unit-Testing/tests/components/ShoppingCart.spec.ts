@@ -1,151 +1,69 @@
-import { createTestingPinia } from '@pinia/testing';
-import { ComponentMountingOptions, mount } from '@vue/test-utils';
-import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { mockShoppingCartItems } from '@tests/mocks/products';
-import { useShoppingCartStore } from '@/stores/shoppingCart';
 import ShoppingCart from '@/components/ShoppingCart.vue';
-import { OnyxHeadline, OnyxIconButton } from 'sit-onyx';
-import { ShoppingCartItem } from '@/types/common';
-import { routes } from '@/router/router';
-import { createRouter, createWebHistory } from 'vue-router';
+import { expect, MountResultJsx, test } from '@playwright/experimental-ct-vue';
+import { mockProducts } from '@tests/mocks/products';
+import type { HooksConfig } from '../../playwright/index';
 
-describe('ShoppingCart', () => {
-  let router: ReturnType<typeof createRouter>;
-  let mountingOptions: ComponentMountingOptions<typeof ShoppingCart>;
+test.describe('ShoppingCart', () => {
+  test('should render', async ({ mount }) => {
+    const component = await mount(ShoppingCart);
 
-  beforeEach(() => {
-    router = createRouter({ history: createWebHistory(), routes });
-    mountingOptions = {
-      global: {
-        plugins: [
-          createTestingPinia({ createSpy: vi.fn, stubActions: false }),
-          router,
-        ],
-      },
-    };
+    await expect(component).toBeVisible();
   });
 
-  it('should render', () => {
-    const { wrapper } = setup({});
-
-    expect(wrapper).toBeDefined();
-  });
-
-  describe('given cart items', () => {
-    let shoppingCartItems: ShoppingCartItem[];
-    let totalPrice: number;
-    let setupResult: SetupResult;
-
-    beforeEach(() => {
-      shoppingCartItems = mockShoppingCartItems;
-      totalPrice = 1.23;
-      setupResult = setup({ shoppingCartItems, totalPrice });
-    });
-
-    it('should render cart item list', () => {
-      const { wrapper } = setupResult;
-      const shoppingCartList = wrapper.find('[data-test-id="product-list"]');
-
-      expect(shoppingCartList.exists()).toEqual(true);
-    });
-
-    it('should render all cart items', () => {
-      const { wrapper } = setupResult;
-      const shoppingCartItems = wrapper.findAll('li');
-
-      expect(shoppingCartItems.length).toEqual(shoppingCartItems.length);
-    });
-
-    it('should render cart items with title', () => {
-      const { wrapper } = setupResult;
-      const items = wrapper.findAll('[data-test-id="product-list-item"]');
-
-      items.forEach((item, index) => {
-        const mockItem = shoppingCartItems[index];
-        const title = item.findComponent(OnyxHeadline).text();
-
-        expect(title).toEqual(mockItem.product.title);
+  // Given
+  test.describe('given the shopping cart is empty', () => {
+    let component: MountResultJsx;
+    test.beforeEach(async ({ mount }) => {
+      component = await mount<HooksConfig>(ShoppingCart, {
+        hooksConfig: {
+          store: {
+            cartItems: [],
+          },
+        },
       });
     });
 
-    it('should render cart items with quantity', () => {
-      const { wrapper } = setupResult;
-      const items = wrapper.findAll('[data-test-id="product-list-item"]');
+    // Then
+    test('then it should not display any products', async () => {
+      await expect(
+        component.getByTestId('product-list-item'),
+      ).not.toBeVisible();
+    });
 
-      expect(items.length).toEqual(shoppingCartItems.length);
+    test('then the total price should be 0', async () => {
+      await expect(component).toContainText('Total price: 0.00 $');
+    });
+  });
 
-      items.forEach((item, index) => {
-        const mockItem = shoppingCartItems[index];
-        const quantity = item.find('p').element.textContent;
-
-        expect(quantity).toEqual(`Quantity: ${mockItem.quantity}`);
+  // Given
+  test.describe('given the shopping cart has products', () => {
+    let component: MountResultJsx;
+    test.beforeEach(async ({ mount }) => {
+      component = await mount<HooksConfig>(ShoppingCart, {
+        hooksConfig: {
+          store: {
+            cartItems: [
+              { product: mockProducts[0], quantity: 2 },
+              { product: mockProducts[1], quantity: 1 },
+            ],
+          },
+        },
       });
     });
 
-    it('should render total price', () => {
-      const { wrapper } = setupResult;
-      const totalPriceElement = wrapper.find('.total-price');
-
-      expect(totalPriceElement.text()).toEqual(`Total price: ${totalPrice} $`);
+    // Then
+    test('then it should display the products', async () => {
+      await expect(component).toContainText(mockProducts[0].title);
+      await expect(component).toContainText(mockProducts[1].title);
     });
 
-    it('when remove button is clicked, should call shoppingCartStore.removeFromCart with item id', () => {
-      const { wrapper, removeFromCartSpy } = setupResult;
-      const removeButton = wrapper.findAllComponents(OnyxIconButton)[0];
-      const mockItem = shoppingCartItems[0];
-
-      removeButton.vm.$emit('click');
-
-      expect(removeFromCartSpy).toHaveBeenCalledExactlyOnceWith(
-        mockItem.product.id,
-      );
+    test('then the total price should be correct', async () => {
+      /* Calculated as:
+      Product 0: 29.99 - 10% = 26.991 * 2 = 53.982
+      Product 1: 49.99 - 15% = 42.4915 * 1 = 42.4915
+      Total: 53.982 + 42.4915 = 96.4735 -> 96.47
+      */
+      await expect(component).toContainText('Total price: 96.47 $');
     });
   });
-
-  describe('given no cart items', () => {
-    let setupResult: SetupResult;
-
-    beforeEach(() => {
-      setupResult = setup({ shoppingCartItems: [], totalPrice: 0 });
-    });
-
-    it('should not render cart item list', () => {
-      const { wrapper } = setupResult;
-      const cartItemList = wrapper.find('[data-test-id="product"]');
-
-      expect(cartItemList.exists()).toEqual(false);
-    });
-  });
-
-  const setup = ({
-    shoppingCartItems = [],
-    totalPrice = 0,
-  }: {
-    shoppingCartItems?: ShoppingCartItem[];
-    totalPrice?: number;
-  }) => {
-    const shoppingCartStore = useShoppingCartStore();
-
-    Object.defineProperties(shoppingCartStore, {
-      cartItems: {
-        get: () => shoppingCartItems,
-      },
-      totalPrice: {
-        get: () => totalPrice,
-      },
-    });
-
-    const removeFromCartSpy = vi.spyOn(shoppingCartStore, 'removeFromCart');
-    const wrapper = mount(ShoppingCart, {
-      ...mountingOptions,
-    });
-
-    return {
-      wrapper,
-      removeFromCartSpy,
-      shoppingCartStore,
-    };
-  };
-
-  type SetupResult = ReturnType<typeof setup>;
 });
