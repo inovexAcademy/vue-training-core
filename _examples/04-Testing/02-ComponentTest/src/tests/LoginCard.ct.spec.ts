@@ -84,4 +84,20 @@ test.describe('LoginCard', () => {
       await expect(component.locator(loginBtn)).not.toBeVisible();
     });
   });
+
+  // When
+  test('the name prop changes', async ({ mount }) => {
+    // Arrange
+    const component = await mount(LoginCard, {
+      props: { isLoggedIn: true, name: 'Dieter Schwarz' },
+    });
+
+    await component.update({ props: { name: 'Dieter Bohlen' } });
+
+    // Assert
+    await expect(component.locator(welcomeMsg)).toHaveText(
+      'Welcome, Dieter Bohlen',
+    );
+    await expect(component.locator(loginBtn)).not.toBeVisible();
+  });
 });
