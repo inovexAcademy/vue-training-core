@@ -74,10 +74,6 @@ test.describe('LoginCard', () => {
     test('displays the welcome message', async ({ mount }) => {
       // Arrange
       const component = await mount(LoginCard, {
-        props: { isLoggedIn: false },
-      });
-
-      await component.update({
         props: { isLoggedIn: true, name: 'Dieter Schwarz' },
       });
 
