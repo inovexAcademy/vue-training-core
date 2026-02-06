@@ -10,6 +10,7 @@ The goal of this exercise is to set up vue-router and add navigation between two
   - [ ] `/checkout` should render `CheckoutView.vue`, which was already created for you
 - [ ] In the sidebar inside `HomeView.vue`, add a link to the checkout page
 - [ ] On the checkout page, add a link to the home page
+- [ ] 💪 Bonus challenge: Add a fallback 404 route for all invalid paths. Render a `NotFound` component in those cases.
 
 ## 🖼️ Example Result
 
