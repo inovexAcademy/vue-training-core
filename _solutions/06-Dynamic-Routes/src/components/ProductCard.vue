@@ -27,7 +27,11 @@ const discountedPrice = computed<number | undefined>(() => {
 
 <template>
   <div class="product-card-wrapper">
-    <OnyxCard clickable @click="$emit('product-click', props.id)">
+    <OnyxCard
+      class="product-card"
+      clickable
+      @click="$emit('product-click', props.id)"
+    >
       <OnyxHeadline is="h3">{{ props.title }}</OnyxHeadline>
       <p class="description">{{ props.description }}</p>
       <p class="price" :class="{ 'has-discount': discountedPrice }">
@@ -51,14 +55,19 @@ const discountedPrice = computed<number | undefined>(() => {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+}
+
+.product-card {
+  cursor: pointer;
   transition: transform 0.2s ease-in-out;
 
   &:hover {
-    transform: scale(1.015);
+    transform: scale(1.01);
   }
 }
 
 .add-to-cart-button {
+  margin-top: 0.5rem;
   margin-left: 0.5rem;
   margin-bottom: 1rem;
   align-self: flex-end;

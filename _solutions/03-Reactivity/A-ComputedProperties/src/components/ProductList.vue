@@ -17,6 +17,8 @@ const handleAddToCart = (productId: number) => {
 
   emit('add-to-cart', productToAdd);
 };
+
+const handleProductClick = (productId: number) => {};
 </script>
 
 <template>
@@ -31,6 +33,7 @@ const handleAddToCart = (productId: number) => {
           :price="products[0].price"
           :discount-percentage="products[0].discountPercentage"
           @add-to-cart="handleAddToCart"
+          @product-click="handleProductClick(products[0].id)"
         ></ProductCard>
       </li>
       <li>
@@ -41,6 +44,7 @@ const handleAddToCart = (productId: number) => {
           :price="products[1].price"
           :discount-percentage="products[1].discountPercentage"
           @add-to-cart="handleAddToCart"
+          @product-click="handleProductClick(products[1].id)"
         ></ProductCard>
       </li>
     </ul>

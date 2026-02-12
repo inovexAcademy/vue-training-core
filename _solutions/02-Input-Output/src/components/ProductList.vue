@@ -8,6 +8,8 @@ const products = getProducts();
 const handleAddToCart = (productId: number) => {
   window.alert(`Added product with Id ${productId} to cart`);
 };
+
+const handleProductClick = (productId: number) => {};
 </script>
 
 <template>
@@ -21,6 +23,7 @@ const handleAddToCart = (productId: number) => {
           :description="products[0].description"
           :price="products[0].price"
           @add-to-cart="handleAddToCart"
+          @product-click="handleProductClick(products[0].id)"
         ></ProductCard>
       </li>
       <li>
@@ -30,6 +33,7 @@ const handleAddToCart = (productId: number) => {
           :description="products[1].description"
           :price="products[1].price"
           @add-to-cart="handleAddToCart"
+          @product-click="handleProductClick(products[1].id)"
         ></ProductCard>
       </li>
     </ul>

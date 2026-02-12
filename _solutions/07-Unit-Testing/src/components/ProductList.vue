@@ -19,6 +19,8 @@ const handleAddToCart = (productId: number) => {
 };
 
 const router = useRouter();
+
+const handleProductClick = (productId: number) => {};
 </script>
 
 <template>
@@ -38,6 +40,7 @@ const router = useRouter();
           :price="product.price"
           :discount-percentage="product.discountPercentage"
           @add-to-cart="handleAddToCart"
+          @product-click="handleProductClick(product.id)"
         ></ProductCard>
       </li>
     </ul>

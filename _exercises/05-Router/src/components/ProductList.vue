@@ -16,6 +16,8 @@ const handleAddToCart = (productId: number) => {
 
   shoppingCartStore.addToCart(productToAdd);
 };
+
+const handleProductClick = (productId: number) => {};
 </script>
 
 <template>
@@ -30,6 +32,7 @@ const handleAddToCart = (productId: number) => {
           :price="product.price"
           :discount-percentage="product.discountPercentage"
           @add-to-cart="handleAddToCart"
+          @product-click="handleProductClick(product.id)"
         ></ProductCard>
       </li>
     </ul>
