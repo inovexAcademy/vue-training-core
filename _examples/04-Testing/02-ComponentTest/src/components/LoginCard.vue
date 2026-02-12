@@ -5,17 +5,32 @@ const props = withDefaults(
   defineProps<{
     isLoggedIn?: boolean;
     name?: string;
+    details?: {
+      lastLogin: string;
+      timeToLogout: number;
+      email: string;
+      address: {
+        city: string;
+        country: string;
+      };
+    };
   }>(),
   {
     isLoggedIn: false,
     name: '',
+    details: undefined,
   },
 );
 
 const emit = defineEmits<{
   login: [boolean];
+  logout: [Date];
   cancel: [];
 }>();
+
+function logout(timestamp: Date) {
+  emit('logout', timestamp);
+}
 </script>
 
 <template>
@@ -30,7 +45,21 @@ const emit = defineEmits<{
       >
     </template>
 
-    <p v-else data-testid="welcome-message">Welcome, {{ props.name }}</p>
+    <div v-else>
+      <p data-testid="welcome-message">Welcome, {{ props.name }}</p>
+      <div v-if="props.details" data-testid="details">
+        <p>Last Login: {{ props.details.lastLogin }}</p>
+        <p>Time to Logout: {{ props.details.timeToLogout }} minutes</p>
+        <p>Email: {{ props.details.email }}</p>
+        <p>
+          Address: {{ props.details.address.city }},
+          {{ props.details.address.country }}
+        </p>
+      </div>
+      <button data-testid="logout-button" @click="logout(new Date())">
+        Logout
+      </button>
+    </div>
   </div>
 </template>
 

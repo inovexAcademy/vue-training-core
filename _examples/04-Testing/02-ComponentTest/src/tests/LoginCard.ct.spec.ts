@@ -3,13 +3,15 @@ import { expect, test } from '@playwright/experimental-ct-vue';
 
 const loginMsg = '[data-testid=login-message]';
 const loginBtn = '[data-testid=login-button]';
+const logoutBtn = '[data-testid=logout-button]';
 const welcomeMsg = '[data-testid=welcome-message]';
+const details = '[data-testid=details]';
 
 // Component name as outmost describe
 test.describe('LoginCard', () => {
   // Given
   test.describe('given the user is not logged in', () => {
-    test('shows login message', async ({ mount }) => {
+    test('shows a login message', async ({ mount }) => {
       // Arrange
       const component = await mount(LoginCard, {
         props: { isLoggedIn: false, name: '' },
@@ -17,9 +19,28 @@ test.describe('LoginCard', () => {
 
       // Assert
       await expect(component.locator(loginMsg)).toHaveText('Login to continue');
+    });
+
+    test('shows a login button', async ({ mount }) => {
+      // Arrange
+      const component = await mount(LoginCard, {
+        props: { isLoggedIn: false, name: '' },
+      });
+
+      // Assert
       await expect(component.locator(loginBtn)).toBeVisible();
+    });
+
+    test('does not show a welcome message', async ({ mount }) => {
+      // Arrange
+      const component = await mount(LoginCard, {
+        props: { isLoggedIn: false, name: '' },
+      });
+
+      // Assert
       await expect(component.locator(welcomeMsg)).not.toBeVisible();
     });
+
     // When
     test.describe('when user clicks on login button', () => {
       // Then
@@ -81,23 +102,67 @@ test.describe('LoginCard', () => {
       await expect(component.locator(welcomeMsg)).toHaveText(
         'Welcome, Dieter Schwarz',
       );
+    });
+
+    test('does not display the login button anymore', async ({ mount }) => {
+      // Arrange
+      const component = await mount(LoginCard, {
+        props: { isLoggedIn: true, name: 'Dieter Schwarz' },
+      });
+
+      // Assert
       await expect(component.locator(loginBtn)).not.toBeVisible();
     });
-  });
 
-  // When
-  test('the name prop changes', async ({ mount }) => {
-    // Arrange
-    const component = await mount(LoginCard, {
-      props: { isLoggedIn: true, name: 'Dieter Schwarz' },
+    test('displays a logout button', async ({ mount }) => {
+      // Arrange
+      const component = await mount(LoginCard, {
+        props: { isLoggedIn: true, name: 'Dieter Schwarz' },
+      });
+
+      // Assert
+      await expect(component.locator(logoutBtn)).toBeVisible();
     });
 
-    await component.update({ props: { name: 'Dieter Bohlen' } });
+    test('displays nested details', async ({ mount }) => {
+      // Arrange
+      const component = await mount(LoginCard, {
+        props: {
+          isLoggedIn: true,
+          name: 'Dieter Schwarz',
+          details: {
+            lastLogin: '2024-06-01T12:00:00Z',
+            timeToLogout: 3600,
+            email: 'dieter.schwarz@example.com',
+            address: {
+              city: 'Berlin',
+              country: 'Germany',
+            },
+          },
+        },
+      });
 
-    // Assert
-    await expect(component.locator(welcomeMsg)).toHaveText(
-      'Welcome, Dieter Bohlen',
-    );
-    await expect(component.locator(loginBtn)).not.toBeVisible();
+      // Assert
+      await expect(component.locator(details)).toHaveText(
+        'Last Login: 2024-06-01T12:00:00ZTime to Logout: 3600 minutesEmail: dieter.schwarz@example.com Address: Berlin, Germany',
+      );
+    });
+
+    // When
+    test('the name prop changes', async ({ mount }) => {
+      // Arrange
+      const component = await mount(LoginCard, {
+        props: { isLoggedIn: true, name: 'Dieter Schwarz' },
+      });
+
+      await component.update({ props: { name: 'Dieter Bohlen' } });
+
+      // Assert
+      await expect(component.locator(welcomeMsg)).toHaveText(
+        'Welcome, Dieter Bohlen',
+      );
+      await expect(component.locator(loginBtn)).not.toBeVisible();
+      await expect(component.locator(logoutBtn)).toBeVisible();
+    });
   });
 });
