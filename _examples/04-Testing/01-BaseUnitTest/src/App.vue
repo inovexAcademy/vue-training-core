@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { multiply } from './calc-helper';
+import { multiply } from './helpers/calc-helper';
 
 const result = multiply(2, 3);
 </script>

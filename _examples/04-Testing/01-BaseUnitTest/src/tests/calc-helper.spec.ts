@@ -1,4 +1,4 @@
-import { multiply } from '@/calc-helper';
+import { multiply } from '@/helpers/calc-helper';
 import { describe, expect, test } from 'vitest';
 
 describe('calc-helper', () => {
