@@ -40,6 +40,7 @@
   "vue.inlayHints.destructuredProps": true,
   "vitest.maximumConfigs": 50,
   "workbench.colorTheme": "Default Light+",
+  "chat.disableAIFeatures": true,
   "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
   "chat.notifyWindowOnConfirmation": false,
