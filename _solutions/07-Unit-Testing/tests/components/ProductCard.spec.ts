@@ -1,5 +1,5 @@
-import { expect, test } from '@playwright/experimental-ct-vue';
 import ProductCard from '@/components/ProductCard.vue';
+import { expect, test } from '@playwright/experimental-ct-vue';
 
 test.describe('ProductCard', () => {
   // Given
@@ -52,6 +52,7 @@ test.describe('ProductCard', () => {
     test.describe('when the user clicks the add to cart button', () => {
       // Then
       test('emits add-to-cart event on button click', async ({ mount }) => {
+        let emittedEvent: number | null = null;
         const component = await mount(ProductCard, {
           props: {
             id: 1,
@@ -61,7 +62,7 @@ test.describe('ProductCard', () => {
           },
           on: {
             'add-to-cart': (id: number) => {
-              expect(id).toBe(1);
+              emittedEvent = id;
             },
           },
         });
@@ -70,6 +71,7 @@ test.describe('ProductCard', () => {
           name: 'Add to cart',
         });
         await button.click();
+        expect(emittedEvent).toBe(1);
       });
     });
   });
