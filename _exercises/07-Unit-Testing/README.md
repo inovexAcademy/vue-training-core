@@ -2,15 +2,17 @@
 
 The goal of this exercise is to write basic unit tests using vitest and component tests using playwright.
 
-## 📝 Tasks
+## 📝 Task
 
 - [ ] It seems like the discounted price function could be used in many different components. We want to make it future proof. Extract the calculation within the `discountedPrice` of the `ProductCard.vue` component into a calculation helper file. Then, create meaningful isolated unit tests for it.
 
-### 💪 Bonus challenges:
+### 💪 Bonus challenge:
 
 - [ ] Come up with meaningful unit test cases for the `ProductCard` component and implement them
 
-  > 💡 Don't be afraid to draw inspiration from the component tests of `ShoppingCart` 🙂
+  > 💡 Don't be afraid to draw inspiration from the unit tests of [ProductCard.spec.ts](./tests/components/ProductCard.spec.ts) and [ShoppingCart.spec.ts](./tests/components/ShoppingCart.spec.ts) 🙂
+
+- [ ] Add unit tests for the shopping cart store (find help [here](https://pinia.vuejs.org/cookbook/testing.html))
 
 ## 💡 Help
 

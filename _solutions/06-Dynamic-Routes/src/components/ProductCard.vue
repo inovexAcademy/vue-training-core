@@ -13,6 +13,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'add-to-cart': [id: number];
+  'product-click': [id: number];
 }>();
 
 const discountedPrice = computed<number | undefined>(() => {
@@ -25,24 +26,44 @@ const discountedPrice = computed<number | undefined>(() => {
 </script>
 
 <template>
-  <OnyxCard>
-    <OnyxHeadline is="h3">{{ props.title }}</OnyxHeadline>
-    <p class="description">{{ props.description }}</p>
-    <p class="price" :class="{ 'has-discount': discountedPrice }">
-      Price: {{ props.price }} $
-    </p>
-    <p v-if="discountedPrice" class="discounted-price">
-      Discounted Price: {{ discountedPrice }} $
-    </p>
+  <div class="product-card-wrapper">
+    <OnyxCard clickable @click="$emit('product-click', props.id)">
+      <OnyxHeadline is="h3">{{ props.title }}</OnyxHeadline>
+      <p class="description">{{ props.description }}</p>
+      <p class="price" :class="{ 'has-discount': discountedPrice }">
+        Price: {{ props.price }} $
+      </p>
+      <p v-if="discountedPrice" class="discounted-price">
+        Discounted Price: {{ discountedPrice }} $
+      </p>
+    </OnyxCard>
     <OnyxButton
+      class="add-to-cart-button"
       label="Add to cart"
       :icon="iconPlus"
       @click.stop="emit('add-to-cart', props.id)"
     ></OnyxButton>
-  </OnyxCard>
+  </div>
 </template>
 
 <style scoped lang="css">
+.product-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.015);
+  }
+}
+
+.add-to-cart-button {
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  align-self: flex-end;
+}
+
 .price {
   &.has-discount {
     text-decoration: line-through;

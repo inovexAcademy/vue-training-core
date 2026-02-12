@@ -1,7 +1,7 @@
-import { createWebHistory, createRouter } from 'vue-router';
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 
-import HomeView from '@/views/HomeView.vue';
 import CheckoutView from '@/views/CheckoutView.vue';
+import HomeView from '@/views/HomeView.vue';
 
 export const routes: RouteRecordRaw[] = [
   { path: '/', component: HomeView, name: 'Home' },

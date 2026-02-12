@@ -25,7 +25,7 @@
     "start:4": "cd _exercises/04-Pinia && pnpm run dev",
     "start:5": "cd _exercises/05-Router && pnpm run dev",
     "start:6": "cd _exercises/06-Dynamic-Routes && pnpm run dev",
-    "start:7": "cd _exercises/07-Unit-Testing && pnpm run dev",
+    "start:7": "cd _exercises/07-Unit-Testing && pnpm run test:unit",
     "start:8": "cd _exercises/08-Your-Turn && pnpm run dev",
     "start:all-in": "cd _exercises/99-All-In-One-Go && pnpm run dev",
     "lint": "eslint .",
