@@ -1,0 +1,22 @@
+{
+  "name": "example-welcome",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "engineStrict": true,
+  "engines": {
+    "node": "23"
+  },
+  "scripts": {
+    "start": "pnpm run dev",
+    "dev": "vite",
+    "build": "run-p type-check build-only",
+    "test:unit": "vitest",
+    "test:unit:ci": "run-p type-check:test \"test:unit --run --coverage\"",
+    "test:component": "playwright install && playwright test -c ./tests/component/playwright-ct.config.ts",
+    "test:integration": "playwright install && playwright test -c ./tests/integration/playwright.config.ts",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
+    "type-check:test": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
+  }
+}

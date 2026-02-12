@@ -17,6 +17,7 @@
     "build-all": "pnpm -r exec vite build",
     "prepare": "simple-git-hooks -ws -if-present",
     "preinstall": "npx only-allow pnpm",
+    "start:welcome": "cd _examples/Welcome && pnpm run dev",
     "start:1": "cd _exercises/01-Components && pnpm run dev",
     "start:2": "cd _exercises/02-Input-Output && pnpm run dev",
     "start:3a": "cd _exercises/03-Reactivity/A-ComputedProperties && pnpm run dev",
@@ -92,5 +93,6 @@
       "prettier --write -u",
       "eslint --fix"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.29.3+sha256.a74f4dbd3f5a7ca874d004135271f0b697b683bf1fd2fc2133961161cd25b29c"
 }
