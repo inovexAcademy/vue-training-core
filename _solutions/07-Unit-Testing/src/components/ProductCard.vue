@@ -17,10 +17,12 @@ const emit = defineEmits<{
   'product-click': [id: number];
 }>();
 
-const discountedPrice = computed<number | undefined>(() => {
-  if (!props.discountPercentage || props.discountPercentage <= 0)
-    return undefined;
+const discountedPrice = computed<number>(() => {
   return calcDiscountedPrice(props.price, props.discountPercentage);
+});
+
+const hasDiscount = computed<boolean>(() => {
+  return props.discountPercentage !== undefined && props.discountPercentage > 0;
 });
 </script>
 
@@ -33,10 +35,10 @@ const discountedPrice = computed<number | undefined>(() => {
     >
       <OnyxHeadline is="h3">{{ props.title }}</OnyxHeadline>
       <p class="description">{{ props.description }}</p>
-      <p class="price" :class="{ 'has-discount': discountedPrice }">
+      <p class="price" :class="{ 'has-discount': hasDiscount }">
         Price: {{ props.price }} $
       </p>
-      <p v-if="discountedPrice" class="discounted-price">
+      <p v-if="hasDiscount" class="discounted-price">
         Discounted Price: {{ discountedPrice }} $
       </p>
     </OnyxCard>

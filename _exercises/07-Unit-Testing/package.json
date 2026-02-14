@@ -15,6 +15,7 @@
     "test:unit": "vitest",
     "test:unit:ci": "run-p type-check:test \"test:unit --run --coverage\"",
     "test:component": "playwright test -c playwright-ct.config.ts",
+    "test:component:watch": "PW_TEST_HTML_REPORT_OPEN=never npx nodemon --watch ./ --ext vue,ts --exec 'pnpm test:component'",
     "test:component:ui": "playwright test --ui -c playwright-ct.config.ts",
     "test:integration": "playwright install && playwright test -c ./tests/integration/playwright.config.ts",
     "build-only": "vite build",

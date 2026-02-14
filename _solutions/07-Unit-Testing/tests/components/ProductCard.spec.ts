@@ -67,7 +67,7 @@ test.describe('ProductCard', () => {
           },
         });
 
-        const button = await component.getByRole('button', {
+        const button = component.getByRole('button', {
           name: 'Add to cart',
         });
         await button.click();

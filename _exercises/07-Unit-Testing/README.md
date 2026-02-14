@@ -4,11 +4,11 @@ The goal of this exercise is to write basic unit tests using vitest and componen
 
 ## 📝 Task
 
-- [ ] It seems like the discounted price function could be used in many different components. We want to make it future proof. Extract the calculation within the `discountedPrice` of the `ProductCard.vue` component into a calculation helper file. Then, create meaningful isolated unit tests for it.
+- [ ] It seems like the discounted price function could be used in many different components. We want to make it future proof. Extract the calculation for the `discountedPrice` computed property within the [ProductCard.vue](./src/components/ProductCard.vue) component into a calculation helper file. Then, create meaningful unit tests for that function.
 
-- [ ] Come up with meaningful unit test cases for the `ProductCard` component and implement them
+- [ ] Come up with meaningful component test cases for the `ProductCard` component and implement them
 
-  > 💡 Don't be afraid to draw inspiration from the unit tests of [ProductCard.spec.ts](./tests/components/ProductCard.spec.ts) and [ShoppingCart.spec.ts](./tests/components/ShoppingCart.spec.ts) 🙂
+  > 💡 Don't be afraid to draw inspiration from the component tests of [ShoppingCart.spec.ts](./tests/components/ShoppingCart.spec.ts) 🙂
 
 ### 💪 Bonus challenge:
 
