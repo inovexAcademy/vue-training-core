@@ -6,9 +6,7 @@ The goals of this exercise is to use Vue computed properties to calculate derive
 
 - [ ] `HomeView`:
   - [ ] Add an `OnyxSidebar` to the `HomeView` and make it display the newly created [`ShoppingCart`](./src/components/ShoppingCart.vue) component
-  - [ ] Create a state for the list of `ShoppingCartItem`s within the `HomeView` component. The HomeView component should then pass this state to the component that requires it. In the end
-  - the `ProductList` should be able to add items to the cart
-  - the `ShoppingCart` should be able to remove items from the cart.
+  - [ ] Create a state for the list of `ShoppingCartItem`s within the `HomeView` component. The HomeView component should then pass this state to the component that requires it. In the end, the `ProductList` should be able to add items to the cart
 
 - [ ] `ShoppingCart`:
   - [ ] Render the javascript object for the cart items within this sidebar
