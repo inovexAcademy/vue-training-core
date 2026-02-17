@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
+import WritableComputed from './components/WritableComputed.vue';
 
 const quantity = ref(1);
 const price = ref(10);
@@ -17,4 +18,8 @@ const totalWithTax = computed(() => {
   <div>Total with Tax: {{ totalWithTax }}</div>
 
   <button @click="quantity++">Increase Quantity</button>
+
+  <br />
+
+  <WritableComputed />
 </template>
