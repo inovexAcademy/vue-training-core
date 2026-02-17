@@ -11,17 +11,12 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'add-to-cart': [id: number];
-  'product-click': [id: number];
 }>();
 </script>
 
 <template>
   <div class="product-card-wrapper">
-    <OnyxCard
-      class="product-card"
-      clickable
-      @click="$emit('product-click', props.id)"
-    >
+    <OnyxCard class="product-card">
       <OnyxHeadline is="h3">{{ props.title }}</OnyxHeadline>
       <p class="description">{{ props.description }}</p>
       <p class="price">Price: {{ props.price }} $</p>
@@ -30,7 +25,7 @@ const emit = defineEmits<{
       class="add-to-cart-button"
       label="Add to cart"
       :icon="iconPlus"
-      @click.stop="emit('add-to-cart', props.id)"
+      @click="emit('add-to-cart', props.id)"
     ></OnyxButton>
   </div>
 </template>
@@ -40,15 +35,6 @@ const emit = defineEmits<{
   display: flex;
   flex-direction: column;
   align-items: stretch;
-}
-
-.product-card {
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.01);
-  }
 }
 
 .add-to-cart-button {
