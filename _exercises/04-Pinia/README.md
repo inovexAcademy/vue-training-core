@@ -6,7 +6,7 @@ The goal of this exercise is to move the shopping cart state and its management 
 
 > ⚠️ Make sure to use the [Setup Store](<(https://pinia.vuejs.org/core-concepts/#Setup-Stores)>) syntax, not Option Store!
 
-- [ ] Add a Pinia store that manages the shopping cart state. It should at least have the following properties:
+- [ ] Add a Pinia store that manages the shopping cart state. You can add the new file in a `stores` folder within `src`. It should at least expose the following properties:
   - [ ] A list of all `ShoppingCartItem`s in the cart
   - [ ] A function that adds items to the cart, e.g.`addToCart`
   - [ ] A function that removes items from the cart, e.g. `removeFromCart`
