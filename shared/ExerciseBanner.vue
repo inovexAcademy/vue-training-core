@@ -16,6 +16,7 @@ Exercise {{ props.number }} {{ props.title ? ':' : '' }} {{ props.title }}</pre
 <style scoped>
 .exercise-banner {
   color: white;
+  background-color: rgb(43, 43, 43);
   padding: 0.4rem 0.75rem;
   border: 4px dashed #e65ad9;
   text-align: left;
