@@ -13,7 +13,6 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'add-to-cart': [id: number];
-  'product-click': [id: number];
 }>();
 
 const discountedPrice = computed<number | undefined>(() => {
@@ -27,11 +26,7 @@ const discountedPrice = computed<number | undefined>(() => {
 
 <template>
   <div class="product-card-wrapper">
-    <OnyxCard
-      class="product-card"
-      clickable
-      @click="$emit('product-click', props.id)"
-    >
+    <OnyxCard class="product-card">
       <OnyxHeadline is="h3">{{ props.title }}</OnyxHeadline>
       <p class="description">{{ props.description }}</p>
       <p class="price" :class="{ 'has-discount': discountedPrice }">
@@ -55,15 +50,6 @@ const discountedPrice = computed<number | undefined>(() => {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-}
-
-.product-card {
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.01);
-  }
 }
 
 .add-to-cart-button {

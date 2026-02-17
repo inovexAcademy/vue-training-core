@@ -1,10 +1,7 @@
 <script lang="ts" setup>
 import ProductList from '@/components/ProductList.vue';
 import ShoppingCart from '@/components/ShoppingCart.vue';
-import { OnyxPageLayout, OnyxSidebar, useToast } from 'sit-onyx';
-
-const toast = useToast();
-toast.show({ headline: 'Test' });
+import { OnyxPageLayout, OnyxSidebar } from 'sit-onyx';
 </script>
 
 <template>
