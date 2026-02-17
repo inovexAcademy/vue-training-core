@@ -43,6 +43,9 @@
   "chat.disableAIFeatures": true,
   "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
+  "tabnine.experimentalAutoImports": false,
+  "editor.inlineSuggest.enabled": false,
+  "extensions.ignoreRecommendations": true,
   "chat.notifyWindowOnConfirmation": false,
   "telemetry.feedback.enabled": false,
   "githubPullRequests.codingAgent.enabled": true
