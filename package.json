@@ -17,6 +17,7 @@
     "build-all": "pnpm -r exec vite build",
     "prepare": "simple-git-hooks -ws -if-present",
     "preinstall": "npx only-allow pnpm",
+    "postinstall": "npx playwright install",
     "start:welcome": "cd _examples/Welcome && pnpm run dev",
     "start:1": "cd _exercises/01-Components && pnpm run dev",
     "start:2": "cd _exercises/02-Input-Output && pnpm run dev",
