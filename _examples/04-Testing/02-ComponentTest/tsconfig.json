@@ -3,6 +3,8 @@
     "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "bundler",
+    "strict": true,
+    "strictNullChecks": true,
     "paths": {
       "@/*": [
         "./src/*"

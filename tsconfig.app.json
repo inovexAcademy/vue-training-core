@@ -2,14 +2,24 @@
   "compilerOptions": {
     "baseUrl": ".",
     "composite": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "target": "esnext",
+    "strict": true,
+    "strictNullChecks": true,
     "moduleResolution": "bundler",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
     "resolveJsonModule": true,
-    "types": ["@intlify/unplugin-vue-i18n/messages"],
+    "types": [
+      "@intlify/unplugin-vue-i18n/messages"
+    ],
     "noUncheckedIndexedAccess": true
   },
   "exclude": [],

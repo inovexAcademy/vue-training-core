@@ -3,12 +3,21 @@
     "baseUrl": "",
     "module": "esnext",
     "moduleResolution": "bundler",
+    "strict": true,
+    "strictNullChecks": true,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     "resolveJsonModule": true,
     "target": "esnext"
   },
   "extends": "../../tsconfig.json",
-  "include": ["src/types/env.d.ts", "src/**/*", "src/**/*.vue", "package.json"]
+  "include": [
+    "src/types/env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "package.json"
+  ]
 }
