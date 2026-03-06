@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import ProductCard from '@/components/ProductCard.vue';
-import { getProducts } from '@/shared/products';
+import { getProduct1, getProduct2 } from '@/shared/products';
 import { OnyxHeadline } from 'sit-onyx';
 
-const products = getProducts();
+const product1 = getProduct1();
+const product2 = getProduct2();
 
 const handleAddToCart = (productId: number) => {
   window.alert(`Added product with Id ${productId} to cart`);
@@ -16,19 +17,20 @@ const handleAddToCart = (productId: number) => {
     <ul>
       <li>
         <ProductCard
-          :id="products[0].id"
-          :title="products[0].title"
-          :description="products[0].description"
-          :price="products[0].price"
+          :id="product1.id"
+          :title="product1.title"
+          :description="product1.description"
+          :price="product1.price"
           @add-to-cart="handleAddToCart"
-        ></ProductCard>
+        >
+        </ProductCard>
       </li>
       <li>
         <ProductCard
-          :id="products[1].id"
-          :title="products[1].title"
-          :description="products[1].description"
-          :price="products[1].price"
+          :id="product2.id"
+          :title="product2.title"
+          :description="product2.description"
+          :price="product2.price"
           @add-to-cart="handleAddToCart"
         ></ProductCard>
       </li>
