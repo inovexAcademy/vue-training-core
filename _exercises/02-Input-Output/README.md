@@ -10,9 +10,9 @@ The goal of this exercise is to pass data from component to component, display i
   - [ ] Emit an event with the product ID when the user clicks on the "Add to cart"-button
 
 - [ ] `ProductList`:
-  - [ ] Use the `getProducts` method from `@/shared/products` to get a list of products
-    > ⚠️ Use `getProducts` **only** inside of the `ProductList` component!
-  - [ ] Show the information of the **first two** products in the `ProductList` statically (one `ProductCard` component for each entry)
+  - [ ] Use the `getProduct1` and `getProduct2` methods from `@/shared/products` to get two different products
+    > ⚠️ Use `getProduct1` and `getProduct2` **only** inside of the `ProductList` component!
+  - [ ] Show the information of the products in the `ProductList` statically (one `ProductCard` component for each entry)
   - [ ] Handle the event from `ProductCard` and log the ID to the console, e.g. using `console.log(...)`
 
 ## 🖼️ Example Result
