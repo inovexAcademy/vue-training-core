@@ -16,20 +16,19 @@ describe('calc-helpers', () => {
   });
 
   // Example for Table-Driven Tests
-  describe('calcDiscountedPrice (Table-Driven Tests) example', () => {
-    test('should return discounted price', () => {
-      const testCases = [
-        { price: 0, discount: 0, expected: 0 },
-        { price: 100, discount: 20, expected: 80 },
-        { price: 59.99, discount: 15, expected: 50.99 },
-        { price: 10, discount: 0, expected: 10 },
-        { price: 10, discount: -5, expected: 10 },
-        { price: 49.95, discount: 33.33, expected: 33.3 },
-      ];
-
-      testCases.forEach(({ price, discount, expected }) => {
+  describe('calcDiscountedPrice (Table-Driven Tests example)', () => {
+    test.each([
+      { price: 0, discount: 0, expected: 0 },
+      { price: 100, discount: 20, expected: 80 },
+      { price: 59.99, discount: 15, expected: 50.99 },
+      { price: 10, discount: 0, expected: 10 },
+      { price: 10, discount: -5, expected: 10 },
+      { price: 49.95, discount: 33.33, expected: 33.3 },
+    ])(
+      'should for price $price € and discount $discount % return discounted price $expected €',
+      ({ price, discount, expected }) => {
         expect(calcDiscountedPrice(price, discount)).toEqual(expected);
-      });
-    });
+      },
+    );
   });
 });
