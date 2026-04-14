@@ -19,7 +19,9 @@ test.describe('ProductCard', () => {
       await expect(component).toContainText('Test Product');
       await expect(component).toContainText('This is a test product.');
       await expect(component).toContainText('Price: 9.99 $');
-      await expect(component).toContainText('Add to cart');
+      await expect(
+        component.getByRole('button', { name: 'Add to cart' }),
+      ).toBeVisible();
     });
   });
 
@@ -42,7 +44,9 @@ test.describe('ProductCard', () => {
       await expect(component).toContainText('This is a test product.');
       await expect(component).toContainText('Price: 9.99 $');
       await expect(component).toContainText('Discounted Price: 8.99 $');
-      await expect(component).toContainText('Add to cart');
+      await expect(
+        component.getByRole('button', { name: 'Add to cart' }),
+      ).toBeVisible();
     });
   });
 
