@@ -73,3 +73,7 @@ export function getProduct2(): Product {
     ],
   };
 }
+
+export function getProducts() {
+  return [getProduct1(), getProduct2()];
+}

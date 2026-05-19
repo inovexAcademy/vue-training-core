@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import ProductCard from '@/components/ProductCard.vue';
-import { getProducts } from '@/shared/products';
+import { getProduct1, getProduct2 } from '@/shared/products';
 import { Product } from '@/types/common';
 import { OnyxHeadline } from 'sit-onyx';
 
-const products = getProducts();
+const product1 = getProduct1();
+const product2 = getProduct2();
+const products = [product1, product2];
 
 const emit = defineEmits<{
   'add-to-cart': [product: Product];
@@ -25,21 +27,21 @@ const handleAddToCart = (productId: number) => {
     <ul>
       <li>
         <ProductCard
-          :id="products[0].id"
-          :title="products[0].title"
-          :description="products[0].description"
-          :price="products[0].price"
-          :discount-percentage="products[0].discountPercentage"
+          :id="product1.id"
+          :title="product1.title"
+          :description="product1.description"
+          :price="product1.price"
+          :discount-percentage="product1.discountPercentage"
           @add-to-cart="handleAddToCart"
         ></ProductCard>
       </li>
       <li>
         <ProductCard
-          :id="products[1].id"
-          :title="products[1].title"
-          :description="products[1].description"
-          :price="products[1].price"
-          :discount-percentage="products[1].discountPercentage"
+          :id="product2.id"
+          :title="product2.title"
+          :description="product2.description"
+          :price="product2.price"
+          :discount-percentage="product2.discountPercentage"
           @add-to-cart="handleAddToCart"
         ></ProductCard>
       </li>

@@ -2,7 +2,8 @@
 import ProductCard from '@/components/ProductCard.vue';
 import { OnyxHeadline } from 'sit-onyx';
 
-// const products = getProducts();
+// const product1 = getProduct1();
+// const product2 = getProduct2();
 </script>
 
 <template>
