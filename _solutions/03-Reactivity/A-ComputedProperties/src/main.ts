@@ -11,7 +11,7 @@ import './styles/index.scss';
 /**
  * Setup up vue app. This function should not be called twice. Its exported only for testing.
  */
-export async function setupApp() {
+export const setupApp = async () => {
   const onyx = createOnyx({});
 
   const app = createApp(App).use(createPinia()).use(onyx);
@@ -24,5 +24,5 @@ export async function setupApp() {
 
   app.mount('#app');
   return app;
-}
+};
 setupApp();

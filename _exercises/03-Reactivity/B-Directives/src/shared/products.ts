@@ -1,11 +1,13 @@
 import { Product } from '@/types/common';
 
-export async function fetchProducts(quantity: number = 3): Promise<Product[]> {
+export const fetchProducts = async (
+  quantity: number = 3,
+): Promise<Product[]> => {
   const res = await fetch(`https://dummyjson.com/products/?limit=${quantity}`);
   return res.json();
-}
+};
 
-export function getProduct1(): Product {
+export const getProduct1 = (): Product => {
   return {
     id: 1,
     title: 'Product 1',
@@ -38,9 +40,8 @@ export function getProduct1(): Product {
       'https://via.placeholder.com/200',
     ],
   };
-}
-
-export function getProduct2(): Product {
+};
+export const getProduct2 = (): Product => {
   return {
     id: 2,
     title: 'Product 2',
@@ -73,7 +74,8 @@ export function getProduct2(): Product {
       'https://via.placeholder.com/200',
     ],
   };
-}
-export function getProducts() {
+};
+
+export const getProducts = () => {
   return [getProduct1(), getProduct2()];
-}
+};

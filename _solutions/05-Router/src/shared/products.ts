@@ -1,11 +1,13 @@
 import { Product } from '@/types/common';
 
-export async function fetchProducts(quantity: number = 3): Promise<Product[]> {
+export const fetchProducts = async (
+  quantity: number = 3,
+): Promise<Product[]> => {
   const res = await fetch(`https://dummyjson.com/products/?limit=${quantity}`);
   return res.json();
-}
+};
 
-export function getProducts(): Product[] {
+export const getProducts = (): Product[] => {
   return [
     {
       id: 1,
@@ -104,4 +106,4 @@ export function getProducts(): Product[] {
       ],
     },
   ];
-}
+};

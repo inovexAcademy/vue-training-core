@@ -10,11 +10,11 @@ import 'sit-onyx/style.css';
 /**
  * Setup up vue app. This function should not be called twice. Its exported only for testing.
  */
-export async function setupApp() {
+export const setupApp = async () => {
   const onyx = createOnyx({ router });
   const app = createApp(App).use(createPinia()).use(onyx).use(router);
 
   app.mount('#app');
   return app;
-}
+};
 setupApp();

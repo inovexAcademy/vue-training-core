@@ -28,9 +28,9 @@ const emit = defineEmits<{
   cancel: [];
 }>();
 
-function logout(timestamp: Date) {
+const logout = (timestamp: Date) => {
   emit('logout', timestamp);
-}
+};
 </script>
 
 <template>
