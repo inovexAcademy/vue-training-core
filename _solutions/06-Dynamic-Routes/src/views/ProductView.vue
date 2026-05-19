@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { getProducts } from '@/shared/products';
-import { OnyxPageLayout, OnyxHeadline, OnyxCard, OnyxLink } from 'sit-onyx';
+import { OnyxCard, OnyxHeadline, OnyxLink, OnyxPageLayout } from 'sit-onyx';
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
@@ -34,7 +34,7 @@ const discountedPrice = computed<number | undefined>(() => {
     <OnyxCard>
       <OnyxLink href="/">Go back to products</OnyxLink>
       <OnyxHeadline is="h1" class="title">
-        Product {{ $route.params.productId }}
+        Product {{ route.params.productId }}
       </OnyxHeadline>
       <p>{{ product.description }}</p>
       <p>Brand: {{ product.brand }}</p>
