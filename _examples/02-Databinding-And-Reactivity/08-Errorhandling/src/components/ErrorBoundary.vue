@@ -9,9 +9,9 @@ onErrorCaptured((err: Error) => {
   return true;
 });
 
-function reset() {
+const reset = () => {
   error.value = null;
-}
+};
 </script>
 
 <template>

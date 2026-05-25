@@ -15,7 +15,7 @@ export const useShoppingCartStore = defineStore('shoppingCart', () => {
       .toFixed(2),
   );
 
-  function addToCart(newCartItem: Product) {
+  const addToCart = (newCartItem: Product) => {
     const isInCart = cartItems.value.some(
       item => item.product.id === newCartItem.id,
     );
@@ -33,9 +33,9 @@ export const useShoppingCartStore = defineStore('shoppingCart', () => {
       ...cartItems.value,
       { product: newCartItem, quantity: 1 },
     ];
-  }
+  };
 
-  function removeFromCart(productId: number) {
+  const removeFromCart = (productId: number) => {
     cartItems.value = cartItems.value
       .map(item => {
         if (item.product.id === productId) {
@@ -48,7 +48,7 @@ export const useShoppingCartStore = defineStore('shoppingCart', () => {
         return item;
       })
       .filter(item => item.quantity > 0);
-  }
+  };
 
   return {
     cartItems,

@@ -31,7 +31,7 @@ const hasDiscount = computed<boolean>(() => {
     <OnyxCard
       class="product-card"
       clickable
-      @click="$emit('product-click', props.id)"
+      @click="emit('product-click', props.id)"
     >
       <OnyxHeadline is="h3">{{ props.title }}</OnyxHeadline>
       <p class="description">{{ props.description }}</p>
