@@ -14,7 +14,7 @@ const emit = defineEmits<{
 const increment = (count: number) => {
   emit('increment', count + 1);
 };
-const decrement = count => {
+const decrement = (count: number) => {
   emit('decrement', count - 1);
 };
 </script>

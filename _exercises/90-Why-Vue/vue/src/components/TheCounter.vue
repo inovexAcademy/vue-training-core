@@ -17,20 +17,23 @@ const groceries = ref<Grocery[]>([
 ]);
 
 const totalCount = computed<number>(() => {
-  return groceries.value.reduce((sum, grocery) => sum + grocery.quantity, 0);
+  return groceries.value.reduce(
+    (sum, grocery: Grocery) => sum + grocery.quantity,
+    0,
+  );
 });
 
 const incrementGrocery = (grocery: Grocery, newQuantity: number) => {
   const index = groceries.value.findIndex(g => g.id === grocery.id);
   if (index !== -1) {
-    groceries.value[index].quantity = newQuantity;
+    groceries.value[index]!.quantity = newQuantity;
   }
 };
 
 const decrementGrocery = (grocery: Grocery, newQuantity: number) => {
   const index = groceries.value.findIndex(g => g.id === grocery.id);
   if (index !== -1) {
-    groceries.value[index].quantity = Math.max(newQuantity, 0);
+    groceries.value[index]!.quantity = Math.max(newQuantity, 0);
   }
 };
 </script>
