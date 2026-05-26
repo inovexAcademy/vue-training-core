@@ -5,9 +5,9 @@ import { OnyxCard, OnyxHeadline, OnyxIconButton } from 'sit-onyx';
 
 const shoppingCartStore = useShoppingCartStore();
 
-function handleRemove(productId: number) {
+const handleRemove = (productId: number) => {
   shoppingCartStore.removeFromCart(productId);
-}
+};
 </script>
 
 <template>

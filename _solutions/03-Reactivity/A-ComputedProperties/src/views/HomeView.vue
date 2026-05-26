@@ -7,7 +7,7 @@ import { ref } from 'vue';
 
 const cartItems = ref<ShoppingCartItem[]>([]);
 
-function handleAddToCart(newCartItem: Product) {
+const handleAddToCart = (newCartItem: Product) => {
   const isInCart = cartItems.value.some(
     item => item.product.id === newCartItem.id,
   );
@@ -22,7 +22,7 @@ function handleAddToCart(newCartItem: Product) {
   }
 
   cartItems.value = [...cartItems.value, { product: newCartItem, quantity: 1 }];
-}
+};
 </script>
 
 <template>

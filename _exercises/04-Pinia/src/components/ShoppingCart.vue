@@ -4,9 +4,9 @@ import { iconTrash } from '@sit-onyx/icons';
 import { OnyxCard, OnyxHeadline, OnyxIconButton } from 'sit-onyx';
 import { computed } from 'vue';
 
-const cartItems = defineModel<ShoppingCartItem[]>();
+const cartItems = defineModel<ShoppingCartItem[]>({ required: true });
 
-function removeProductFromCart(productId: number) {
+const removeProductFromCart = (productId: number) => {
   cartItems.value = cartItems.value
     .map(item => {
       if (item.product.id === productId) {
@@ -19,7 +19,7 @@ function removeProductFromCart(productId: number) {
       return item;
     })
     .filter(item => item.quantity > 0);
-}
+};
 
 const totalPrice = computed(() =>
   cartItems.value
