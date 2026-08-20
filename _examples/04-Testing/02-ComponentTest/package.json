@@ -12,6 +12,6 @@
     "test:ui": "playwright test --ui -c playwright-ct.config.ts"
   },
   "devDependencies": {
-    "@types/node": "^25.9.1"
+    "@types/node": "^26.2.0"
   }
 }
