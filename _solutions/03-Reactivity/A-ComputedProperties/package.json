@@ -21,6 +21,6 @@
     "type-check:test": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
-    "z-vue-scan": "^0.0.35"
+    "z-vue-scan": "^0.0.37"
   }
 }

@@ -1,5 +1,11 @@
 packages:
-  - '_examples/**/*'
-  - '_exercises/**/*'
-  - '_solutions/**/*'
-  - 'shared' # optional: for shared utilities
+  - "_examples/**/*"
+  - "_exercises/**/*"
+  - "_solutions/**/*"
+  - "shared" # optional: for shared utilities
+allowBuilds:
+  "@import-meta-env/unplugin": true
+  "@parcel/watcher": true
+  esbuild: true
+  simple-git-hooks: true
+  vue-demi: true
