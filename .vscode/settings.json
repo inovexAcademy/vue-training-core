@@ -5,6 +5,7 @@
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.requireConfig": true,
   "[vue]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -45,7 +46,7 @@
   "chat.commandCenter.enabled": false,
   "tabnine.experimentalAutoImports": false,
   "editor.inlineSuggest.enabled": false,
-  "extensions.ignoreRecommendations": true,
+  "extensions.ignoreRecommendations": false,
   "chat.notifyWindowOnConfirmation": false,
   "telemetry.feedback.enabled": false,
   "githubPullRequests.codingAgent.enabled": true
