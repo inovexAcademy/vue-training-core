@@ -1,4 +1,4 @@
-import { Product } from '@/types/common';
+import type { Product } from '@/types/common';
 
 export const fetchProducts = async (
   quantity: number = 3,

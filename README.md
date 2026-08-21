@@ -68,6 +68,22 @@ Either
 
 ---
 
+## 📝 Exercises
+
+Choose an exercise below to open its instructions and get started.
+
+- [01 – Components](_exercises/01-Components/README.md)
+- [02 – Input & Output](_exercises/02-Input-Output/README.md)
+- [03A – Reactivity: Computed Properties](_exercises/03-Reactivity/A-ComputedProperties/README.md)
+- [03B – Reactivity: Directives](_exercises/03-Reactivity/B-Directives/README.md)
+- [04 – Pinia](_exercises/04-Pinia/README.md)
+- [05 – Router](_exercises/05-Router/README.md)
+- [06 – Dynamic Routes](_exercises/06-Dynamic-Routes/README.md)
+- [07 – Unit Testing](_exercises/07-Unit-Testing/README.md)
+- [08 – Your Turn](_exercises/08-Your-Turn/README.md)
+
+---
+
 ## 🧩 Structure of the Repository
 
 ```text

@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@tests': fileURLToPath(new URL('./tests', import.meta.url)),
     },
   },
   define: {
@@ -32,8 +33,11 @@ export default defineConfig(({ mode }) => ({
     open: true,
   },
   test: {
+    globals: true,
     environment: 'jsdom',
+    passWithNoTests: true,
     reporters: ['default', 'junit', 'vitest-sonar-reporter'],
+    exclude: ['**/tests/components/**'],
     outputFile: {
       junit: 'test-results/results-unit.xml',
       'vitest-sonar-reporter': 'test-results/sonar-report.xml',
@@ -44,8 +48,8 @@ export default defineConfig(({ mode }) => ({
       include: ['src'],
       exclude: [...coverageConfigDefaults.exclude, '**/*.stories.*', 'src/api'],
     },
-    include: ['./tests/unit/**/*.spec.ts'],
+    include: ['./tests/**/*.spec.ts'],
     /** The setup files will be called before any test so we can apply global mocks there. */
-    setupFiles: ['./tests/unit/vitest-setup.ts'],
+    setupFiles: ['./tests/vitest-setup.ts'],
   },
 }));

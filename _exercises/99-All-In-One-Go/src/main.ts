@@ -1,4 +1,5 @@
 import App from '@/App.vue';
+import { i18n } from '@/i18n';
 import { createPinia } from 'pinia';
 import { createOnyx } from 'sit-onyx';
 import { createApp } from 'vue';
@@ -12,7 +13,7 @@ import './styles/index.scss';
  */
 export const setupApp = async () => {
   const onyx = createOnyx({});
-  const app = createApp(App).use(createPinia()).use(onyx);
+  const app = createApp(App).use(createPinia()).use(i18n).use(onyx);
 
   app.mount('#app');
   return app;

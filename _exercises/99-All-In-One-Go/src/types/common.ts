@@ -50,3 +50,8 @@ export interface ProductMeta {
   barcode: string;
   qrCode: string;
 }
+
+export type ShoppingCartItem = {
+  product: Product;
+  quantity: number;
+};

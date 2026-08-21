@@ -13,11 +13,43 @@
     "build": "run-p build-only",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "test:unit:ci": "run-p type-check:test \"test:unit --run --coverage\"",
-    "test:component": "playwright install && playwright test -c ./tests/component/playwright-ct.config.ts",
-    "test:integration": "playwright install && playwright test -c ./tests/integration/playwright.config.ts",
+    "test:unit:coverage": "vitest run --coverage",
+    "test:unit:ci": "run-p type-check test:unit:coverage",
+    "test:component": "playwright install && playwright test -c playwright-ct.config.ts --pass-with-no-tests",
     "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "type-check:test": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
+    "type-check": "vue-tsc --noEmit -p tsconfig.json --composite false"
+  },
+  "dependencies": {
+    "@fontsource-variable/source-code-pro": "^5.3.0",
+    "@fontsource-variable/source-sans-3": "^5.3.0",
+    "@sit-onyx/icons": "1.12.0",
+    "@vueuse/core": "^14.4.0",
+    "pinia": "^4.0.3",
+    "sit-onyx": "1.19.0",
+    "vue": "^3.5.41",
+    "vue-i18n": "^11.4.8",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^11.2.5",
+    "@pinia/testing": "^2.0.1",
+    "@playwright/experimental-ct-vue": "~1.62.1",
+    "@playwright/test": "~1.62.1",
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^26.2.0",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vitest/coverage-v8": "^4.1.11",
+    "@vue/compiler-dom": "^3.5.41",
+    "@vue/tsconfig": "~0.9.1",
+    "jsdom": "^30.0.1",
+    "npm-run-all": "^4.1.5",
+    "sass-embedded": "^1.102.0",
+    "typescript": "~6.0.3",
+    "vite": "^8.2.1",
+    "vite-plugin-vue-devtools": "^8.2.1",
+    "vitest": "^4.1.11",
+    "vitest-mock-extended": "^5.1.1",
+    "vitest-sonar-reporter": "^3.0.0",
+    "vue-tsc": "^3.3.10"
   }
 }

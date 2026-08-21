@@ -1,20 +1,19 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "moduleResolution": "bundler",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"],
+      "@tests/*": ["./tests/*"]
     },
-    "resolveJsonModule": true,
-    "target": "esnext"
+    "types": ["vite/client", "node", "@intlify/unplugin-vue-i18n/messages"],
+    "noUncheckedIndexedAccess": true
   },
-  "extends": "../../tsconfig.json",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "include": [
-    "src/types/env.d.ts",
     "src/**/*",
     "src/**/*.vue",
-    "package.json"
+    "tests/**/*.ts",
+    "playwright/**/*.ts",
+    "playwright-ct.config.ts",
+    "vite.config.ts"
   ]
 }

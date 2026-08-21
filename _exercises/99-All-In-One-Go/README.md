@@ -7,11 +7,12 @@ Just stay in this folder and implement all the tasks from exercises 1 to 7 step 
 
 - [01 - Components](../01-Components/README.md)
 - [02 - Input & Output](../02-Input-Output/README.md)
-- [03 - Reactivity](../03-Reactivity/README.md)
-- [04 - Routing](../04-Routing/README.md)
-- [05 - State Management](../05-State-Management/README.md)
-- [06 - Forms](../06-Forms/README.md)
-- [07 - Testing](../07-Testing/README.md)
+- [03A - Reactivity: Computed Properties](../03-Reactivity/A-ComputedProperties/README.md)
+- [03B - Reactivity: Directives](../03-Reactivity/B-Directives/README.md)
+- [04 - Pinia](../04-Pinia/README.md)
+- [05 - Router](../05-Router/README.md)
+- [06 - Dynamic Routes](../06-Dynamic-Routes/README.md)
+- [07 - Unit Testing](../07-Unit-Testing/README.md)
 
 ## Getting Started
 
