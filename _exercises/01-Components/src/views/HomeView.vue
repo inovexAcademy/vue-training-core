@@ -3,7 +3,10 @@ import { OnyxPageLayout } from 'sit-onyx';
 </script>
 
 <template>
-  <OnyxPageLayout> Hello world! </OnyxPageLayout>
+  <OnyxPageLayout>
+    <!-- Your content goes here! -->
+    Hello world!
+  </OnyxPageLayout>
 </template>
 
 <style></style>
