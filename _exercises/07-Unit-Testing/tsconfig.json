@@ -2,6 +2,9 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "bundler",
+    "types": [
+      "vite/client"
+    ],
     "paths": {
       "@/*": [
         "./src/*"
@@ -20,6 +23,7 @@
     "./src/types/vue.d.ts",
     "./src/**/*",
     "./src/**/*.vue",
+    "./playwright/**/*",
     "./package.json",
     "./tests/**/*"
   ]
