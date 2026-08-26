@@ -12,6 +12,10 @@
     },
     "resolveJsonModule": true,
     "target": "esnext",
+    "types": [
+      "vite/client",
+      "vue/jsx"
+    ],
     "noUncheckedIndexedAccess": true
   },
   "extends": "../../tsconfig.json",

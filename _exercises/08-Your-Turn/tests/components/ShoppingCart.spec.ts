@@ -1,6 +1,5 @@
-import { expect, test } from '@playwright/experimental-ct-vue';
 import ShoppingCart from '@/components/ShoppingCart.vue';
-import type { HooksConfig } from '../../playwright/index';
+import { expect, test } from '@playwright/experimental-ct-vue';
 import { mockProducts } from '@tests/mocks/products';
 
 test.describe('ShoppingCart', () => {
@@ -14,7 +13,7 @@ test.describe('ShoppingCart', () => {
   test.describe('given the shopping cart is empty', () => {
     // Then
     test('then it should not display any products', async ({ mount }) => {
-      const component = await mount<HooksConfig>(ShoppingCart, {
+      const component = await mount(ShoppingCart, {
         hooksConfig: {
           store: {
             cartItems: [],
@@ -27,7 +26,7 @@ test.describe('ShoppingCart', () => {
       ).not.toBeVisible();
     });
     test('then the total price should be 0', async ({ mount }) => {
-      const component = await mount<HooksConfig>(ShoppingCart, {
+      const component = await mount(ShoppingCart, {
         hooksConfig: {
           store: {
             cartItems: [],
@@ -43,7 +42,7 @@ test.describe('ShoppingCart', () => {
   test.describe('given the shopping cart has products', () => {
     // Then
     test('then it should display the products', async ({ mount }) => {
-      const component = await mount<HooksConfig>(ShoppingCart, {
+      const component = await mount(ShoppingCart, {
         hooksConfig: {
           store: {
             cartItems: [
@@ -58,7 +57,7 @@ test.describe('ShoppingCart', () => {
       await expect(component).toContainText(mockProducts[1].title);
     });
     test('then the total price should be correct', async ({ mount }) => {
-      const component = await mount<HooksConfig>(ShoppingCart, {
+      const component = await mount(ShoppingCart, {
         hooksConfig: {
           store: {
             cartItems: [
