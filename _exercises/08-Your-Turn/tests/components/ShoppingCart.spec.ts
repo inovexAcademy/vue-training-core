@@ -53,8 +53,8 @@ test.describe('ShoppingCart', () => {
         },
       });
 
-      await expect(component).toContainText(mockProducts[0].title);
-      await expect(component).toContainText(mockProducts[1].title);
+      await expect(component).toContainText(mockProducts[0]!.title);
+      await expect(component).toContainText(mockProducts[1]!.title);
     });
     test('then the total price should be correct', async ({ mount }) => {
       const component = await mount(ShoppingCart, {

@@ -101,15 +101,15 @@ export const mockProducts: Product[] = [
 
 export const mockShoppingCartItems: ShoppingCartItem[] = [
   {
-    product: mockProducts[0],
+    product: mockProducts[0]!,
     quantity: 1,
   },
   {
-    product: mockProducts[1],
+    product: mockProducts[1]!,
     quantity: 5,
   },
   {
-    product: mockProducts[2],
+    product: mockProducts[2]!,
     quantity: 2,
   },
 ];
