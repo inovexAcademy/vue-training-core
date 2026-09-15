@@ -8,8 +8,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "test:component": "playwright test -c playwright-ct.config.ts",
-    "test:ui": "playwright test --ui -c playwright-ct.config.ts"
+    "test:component:legacy": "playwright test -c playwright-ct.config.ts",
+    "test:component:legacy:ui": "playwright test --ui -c playwright-ct.config.ts",
+    "test:component": "playwright test -c playwright.config.ts",
+    "test:component:ui": "playwright test --ui -c playwright.config.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0"
