@@ -13,7 +13,7 @@ export default defineConfig({
     },
   },
   test: {
-    exclude: ['**/*.ct.spec.ts'],
+    exclude: ['**/*.ct.spec.ts', '**/tests/components/**'],
     environment: 'jsdom',
   },
 });
