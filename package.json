@@ -89,7 +89,7 @@
     "simple-git-hooks": "^2.13.1",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.67.0",
-    "vite": "^8.2.1",
+    "vite": "^8.2.4",
     "vite-plugin-run": "~0.9.1",
     "vite-plugin-vue-devtools": "^8.2.1",
     "vitest": "^4.1.11",
